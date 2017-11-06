@@ -42,7 +42,7 @@ Spesso solamente la documentazione e la disciplina prevengono usi impropri di un
 
 Il difetto che si annovera all'uso di servizi come componenti risiede nell'utilizzo di **chiamate remote** per la comunicazione tra servizi: esse **richiedono più risorse rispetto alle chiamate di funzione intraprocesso** e quindi è necessario progettare le API di ciascun servizio rivolgendo maggiore attenzione all'aspetto prestazionale delle stesse.
 
-# Note/Notes
+# Note
 
 <a name="1">1:</a> Throughput indica la capacità di un canale di comunicazione di processare o trasmettere dati in uno specifico periodo di tempo. É una misura di produttività.
 
