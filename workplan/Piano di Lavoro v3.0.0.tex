@@ -1,0 +1,292 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NIH Grant Proposal for the Specific Aims and Research Plan Sections
+% LaTeX Template
+% Version 1.0 (21/10/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Erick Tatro (erickttr@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% Adapted from:
+% J. Hrabe (http://www.magalien.com/public/nih_grants_in_latex.html)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper]{article}
+\usepackage[a4paper, headsep=1.8cm ]{geometry} % Reduce the size of the margin
+%\usepackage{showframe}
+% Variabili per non ripetere i contatti mille volte, MODIFICARE QUI
+\newcommand{\nomeStudente}{Nicola}
+\newcommand{\cognomeStudente}{Dal Maso}
+\newcommand{\matricolaStudente}{1050931}
+\newcommand{\emailStudente}{nicola.dalmaso.2@studenti.unipd.it}
+\newcommand{\telStudente}{+39 3497212010}
+
+\newcommand{\nomeProponente}{Tullio}
+\newcommand{\cognomeProponente}{Vardanega}
+\newcommand{\emailProponente}{tullio.vardanega@math.unipd.it}
+\newcommand{\telProponente}{+39 0498271359}
+
+\newcommand{\nomeTutorInterno}{Claudio}
+\newcommand{\cognomeTutorInterno}{Palazzi}
+\newcommand{\emailTutorInterno}{cpalazzi@math.unipd.it}
+\newcommand{\telTutorInterno}{+39 0498271426}
+
+
+% A note on fonts: As of 2013, NIH allows Georgia, Arial, Helvetica, and Palatino Linotype. LaTeX doesn't have Georgia or Arial built in; you can try to come up with your own solution if you wish to use those fonts. Here, Palatino & Helvetica are available, leave the font you want to use uncommented while commenting out the other one.
+%\usepackage{palatino} % Palatino font
+\usepackage[utf8x]{inputenc}%codifica
+\usepackage[italian]{babel} % setta la lingua - necessaria per il comando /today, che altrimenti stampa in inglese
+\usepackage{helvet} % Helvetica font
+\usepackage{array}
+\usepackage{multirow} % permette di unire più celle verticali nelle tabelle
+\usepackage{hhline} % permette di utilizzare linee delle tabelle particolari
+\usepackage{arydshln}
+\renewcommand*\familydefault{\sfdefault} % Use the sans serif version of the font
+\usepackage[T1]{fontenc}
+\linespread{1.2} % A little extra line spread is better for the Palatino font
+\usepackage{fancyhdr} %pacchetto per le intestazioni
+\usepackage{hyperref} % pacchetto per i riferimenti
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+\usepackage{graphicx} % Required for including images
+%\usepackage{booktabs} % Top and bottom rules for table
+%\usepackage{wrapfig} % Allows in-line images
+%\usepackage[labelfont=bf]{caption} % Make figure numbering in captions bold
+\usepackage{ragged2e}
+% personalizza l'intestazione e piè di pagina
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{
+	\parbox{1.7cm}{\raggedleft Università degli Studi di Padova}
+	\parbox{1.5cm}{\includegraphics[height=1.5cm]{./immagini/logo-unipd.png}}	
+}
+\lhead{
+	\parbox{10cm}{
+	\nomeStudente{} \cognomeStudente \\
+	\matricolaStudente\\
+	Piano di lavoro stage interno
+	}
+}
+\renewcommand{\headrulewidth}{0cm}
+
+
+\hyphenation{ionto-pho-re-tic iso-tro-pic fortran} % Specifies custom hyphenation points for words or words that shouldn't be hyphenated at all
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	urlcolor=blue
+}
+
+%-------------------------------------------------------------------------------------------------
+%	Creato da Mich - Updated by Simone Pessotto 04/08/2015 - Updated by Beatrice Guerra 11/05/2017
+%-------------------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[height=5cm]{./immagini/logo-unipd.png} \par \vspace{1cm}
+	{\scshape\LARGE Università degli Studi di Padova \par}
+	\vspace{0.5cm}
+	{\scshape\Large Laurea in Informatica \par}
+	\vspace{1cm}
+	{\Huge\bfseries Piano di lavoro \par}
+	\vspace{0.5cm}
+	{\Large\itshape Stage Interno}
+	\vfill
+	{\scshape\Large \nomeStudente{} \cognomeStudente{}\par}
+	{\scshape\large \matricolaStudente \par}
+	\vfill
+	{\itshape \today}
+	
+\end{titlepage}
+
+\section*{Contatti}
+\parbox{14.7cm}{\textbf{Studente:} \nomeStudente{} \cognomeStudente{}, \href{mailto:\emailStudente{}}{\emailStudente{}}, \telStudente{}} \\
+
+\noindent
+\parbox{14.7cm}{\textbf{Proponente:} \nomeProponente{} \cognomeProponente{}, \href{mailto:\emailProponente{}}{\emailProponente{}}, \telProponente{}} \\
+
+\noindent
+\parbox{14.7cm}{\textbf{Tutor Interno:} \nomeTutorInterno{} \cognomeTutorInterno{}, \href{mailto:\emailTutorInterno{}}{\emailTutorInterno{}}, \telTutorInterno{}} \\
+
+\section*{Scopo dello stage}
+
+Lo stage prevede lo sviluppo e la realizzazione di una \textit{dashboard} per la gestione di dispositivi interconnessi (IoT).\\
+L'idea alla base del sistema è quella di un centro di controllo attraverso cui l'utente del sistema gestisce i dispositivi smart presenti nella propria rete domestica, permettendo operazioni del tipo:
+\begin{itemize}
+	\item avvio/spegnimento di un dispositivo;
+	\item monitoraggio dei dispositivi collegati;
+	\item richiesta di dati per conoscere lo stato dei dispositivi (es. per una lampadina: accesa/spenta, assorbimento energetico, ecc.);
+	\item collegamento all'eventuale interfaccia proprietaria del dispositivo (es. supporto tecnico).
+\end{itemize}
+Le tecnologie impiegate per il progetto saranno:
+\begin{itemize}
+	\item Node.JS per i servizi lato backend;
+	\item React, HTML5 e CSS3 per la realizzazione del frontend.
+\end{itemize}
+Data la natura altamente dinamica di questo mercato, il sistema prevede la possibilità di simulare dispositivi collegati ad esso.\\
+Durante lo sviluppo del sistema, verranno impiegati sia dispositivi \textit{virtualizzati}, sia dispositivi fisici.\\
+Il dispositivo fisico scelto dallo studente è il \href{https://www.raspberrypi.org/}{Raspberry Pi rev. 3} dal momento che esso consente il collegamento di numerosi tipi di sensori ed è già posseduto dallo studente.
+
+
+\clearpage
+\section*{Pianificazione del lavoro}
+La pianificazione, in termini di quantità di ore di lavoro, sarà così distribuita:
+\begin{center}	
+\begin{tabular}{|>{\centering} m{1.5cm}|>{\centering} m{1.5cm}|m{10cm}|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Durata in ore}} & \textbf{Descrizione dell'attività} \\
+	\hline
+	\multicolumn{2}{|c|}{40} & Formazione
+	 \begin{itemize}
+		\item Architettura microservizi
+		\item Node.JS orientato ai microservizi
+		\item React
+	\end{itemize} 
+	\\
+	\hline
+	
+	\multirow{4}{*}{120} & & Analisi, sviluppo e implementazione servizio di comunicazione con i dispositivi IoT\\
+	\cline{2-2}
+	& 40 & \begin{itemize}
+		\item Analisi dei protocolli open source esistenti per i diversi dispositivi IoT
+		\item Stima implementazione eventuali nuovi protocolli
+	\end{itemize} \\
+	\cline{2-2}
+	& 80 & \begin{itemize}
+		\item Progettazione del servizio di comunicazione con i dispositivi
+		\item Progettazione dei test del servizio di comunicazione
+		\item Realizzazione dei test e del servizio di comunicazione in Node.JS
+	\end{itemize} \\
+	\hline
+	
+	\multirow{4}{*}{120} & & Analisi, sviluppo e implementazione servizio di presentazione delle informazioni agli utenti\\
+	\cline{2-2}
+	& 40 & \begin{itemize}
+		\item Analisi interazione utente con la \textit{dashboard}
+	\end{itemize} \\
+	\cline{2-2}
+	& 80 & \begin{itemize}
+		\item Progettazione del servizio di presentazione informazioni
+		\item Progettazione dei test del servizio di presentazione
+		\item Realizzazione dei test e del servizio di presentazione in React, HTML5 e CSS3.
+	\end{itemize} \\
+	\hline
+	
+	\multicolumn{2}{|c|}{20} & {\textit{Review} dei servizi, \textit{deploy} dei servizi su Heroku.}\\
+	\hline
+	
+	\multicolumn{2}{|c|}{\textbf{Totale ore}} & {\textbf{300}} \\
+	\hline
+	
+\end{tabular}
+
+\end{center}
+
+\clearpage
+\section*{Milestone}
+In questa sezione vengono presentate le milestone previste per il progetto su base settimanale, associando a ciascuna milestone i prodotti che devono essere sviluppati entro la corrispondente scadenza.
+\begin{itemize}
+	\item Prima settimana: Completamento delle attività di autoformazione con produzione di una breve relazione riguardante la stessa;
+	\item Seconda e terza settimana: Analisi dei protocolli di comunicazione esistenti, primo ciclo di progettazione e implementazione del servizio di comunicazione, mirato all'implementazione dei dispositivi \textit{virtualizzati};
+	\item Quarta e quinta settimana: Revisione analisi sui protocolli, secondo ciclo di progettazione e implementazione del servizio di comunicazione, mirato all'implementazione dei dispositivi fisici (Raspberry Pi);
+	\item Sesta e settima settimana: Analisi dell'interazione utente con la dashboard, progettazione e implementazione del servizio di presentazione;
+	\item Ottava settimana: Revisione dei servizi, stesura del Manuale d'Uso e deploy (opzionale) di un ambiente di simulazione della dashboard su Heroku.
+\end{itemize}
+
+\clearpage
+\section*{Obiettivi}
+Si farà riferimento ai requisiti secondo le seguenti notazioni:
+\begin{itemize}
+	\item \textbf{Ob} per i requisiti obbligatori, vincolanti in quanto obiettivo primario richiesto dal committente;
+	\item  \textbf{D} per i requisiti desiderabili, non vincolanti o strettamente necessari, ma dal riconoscibile valore aggiunto;
+	\item \textbf{Op} per i requisiti opzionali, rappresentanti valore aggiunto non strettamente competitivo.
+\end{itemize}
+Le sigle precedentemente indicate saranno seguite da un numero, identificativo del requisito.\\
+Si prevede lo svolgimento dei seguenti obiettivi:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|>{\centering} m{2cm}|m{11cm}|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Obbligatori}}\\
+	\hline
+	Ob1 & Realizzazione del servizio di comunicazione con i dispositivi IoT: collegamento a dispositivi \textit{virtualizzati} e a dispositivi fisici (Raspberry Pi).\\
+	\hline
+	Ob2 & Realizzazione del servizio di presentazione informazioni all'utente\\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Desiderabili}}\\
+	\hline
+	D1 & Realizzazione del servizio di autenticazione per l'accesso ai servizi\\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Opzionali}}\\
+	\hline
+	Op1 & \textit{Deploy} dei servizi su Heroku\\
+	Op2 & Interazione dei servizi con \textit{database} per funzionalità di monitoring\\
+	\hline
+\end{tabular}
+
+\end{table}
+
+\subsection*{Obiettivi formativi}
+L'obiettivo di questo stage è quello di approfondire, attraverso la realizzazione di un sistema concreto, il pattern architetturale a \textbf{microservizi}.\\
+L'implementazione dei servizi del sistema è basata sulla piattaforma \href{https://nodejs.org/it/}{Node.JS}. Node.JS è un framework già conosciuto dallo studente, utilizzato da alcune tra le più grandi aziende del mondo ITC e il suo crescente adottazione da parte del pubblico lo rende una competenza estremamente interessante per lo studente.\\
+Ad accrescere l'interesse verso il progetto oggetto dello stage è l'ambito tecnologico denominato IoT (\href{https://en.wikipedia.org/wiki/Internet_of_things}{Internet of Things}). L'automazazione di sempre più numerosi aspetti della nostra vita quotidiana, dalla spesa alle pulizie domestiche, rende questo argomento estremamente interessante per lo studente.
+
+\clearpage
+\section*{Prodotti dello Stage}
+Le attività dello Stage portano alla analisi, progettazione e realizzazione del sistema in oggetto del progetto.\\
+Le attività di analisi e progettazione richiedono la produzione dei seguenti documenti:
+\begin{itemize}
+	\item Analisi dei Requisiti, contenente: \begin{itemize}
+		\item scopo del progetto;
+		\item descrizione del progetto;
+		\item requisiti del sistema dal punto di vista funzionale e strutturale.
+	\end{itemize}
+	\item Specifica Tecnica, contentente: \begin{itemize}
+		\item tecnologie impiegate nel progetto;
+		\item descrizione dell'architettura del sistema;
+		\item definizione dell'architettura del sistema, mediante l'utilizzo di diagrammi UML.
+	\end{itemize}
+\end{itemize}
+Le attività di implementazione richiederanno la produzione di codice sorgente pubblicamente disponibile su \href{https://github.com}{GitHub}.
+Lo studente si impegna inoltre ad allegare al codice sorgente un Manuale d'Uso del prodotto, contentente istruzioni per: \begin{itemize}
+	\item ottenere il codice sorgente;
+	\item eseguire il codice ottenuto;
+	\item testare il codice ottenuto.
+\end{itemize}
+Il Manuale d'Uso sarà proposto nella pagina \textit{README} visualizzata di default da GitHub quando un utente naviga verso l'indirizzo del repository del progetto.
+
+\clearpage
+\section*{Fonti informative}
+Le attività di autoformazione si basano sullo studio e la consultazione dei seguenti contenuti tecnici/informativi:
+\begin{itemize}
+	\item \href{https://martinfowler.com/articles/microservices.html}{Martin Fowler - Microservices, a definition of this new architectural term}
+	\item \href{https://en.wikipedia.org/wiki/Microservices}{Microservices - Wikipedia}
+	\item \href{https://medium.com/@cramirez92/build-a-nodejs-cinema-microservice-and-deploying-it-with-docker-part-1}{Sample per la progettazione e implementazione di microservizi attraverso Node.JS}
+	
+	\item \href{https://reactjs.org/docs/}{Documentazione ufficiale React}
+	
+	\item \href{https://github.com/real-logic/aeron/wiki/Protocol-Specification}{Aeron protocol specification}
+	
+	\item \href{https://github.com/mqtt/mqtt.github.io/wiki}{MQTT protocol}
+	
+	\item \href{https://websocket.org/}{WebSocket protocol}
+	
+\end{itemize}
+
+
+
+\end{document}
