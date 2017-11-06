@@ -19,7 +19,7 @@ The system in its core is a control center thanks to which the user is able to m
 -   _gathering devices' status (e.g. a light bulb: on/off, power usage, etc.);_
 -   _link to device's proprietary interface (e.g. for technical support)._
 
-# Repository Index
+# Indice del repository/_Repository index_
 -   [Piano di Lavoro/_Workplan_](./workplan) - `./workplan`
 -   [Formazione/_Training_](./training) - `./training`
 -   [Analisi dei Requisiti/_Software Requirements Specification_](./srs) - `./srs`
