@@ -1,8 +1,6 @@
 # Martin Fowler - Microservices
 _Fonte:_ [https://martinfowler.com/articles/microservices.html](https://martinfowler.com/articles/microservices.html)
 
-_Edizione PDF:_ [PDF](./martinfowler_definition.pdf)
-
 _Edizione HTML:_  [HTML](https://cdn.rawgit.com/niktekusho/IoT-docs/1844e1c2/training/microservices/martinfowler_definition.html)
 
 # Introduzione
