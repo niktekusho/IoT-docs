@@ -111,6 +111,16 @@ Conseguentemente, ogni servizio deve essere progettato focalizzando l'**attenzio
 Utilizzando i servizi come componenti ci si chiede spesso **quante responsabilità** debba avere ciascun servizio: la caratteristica fondamentale da osservare è la nozione di sostituzione e aggiornamento indipendenti.
 Un buon segnale lo si ritrova quando ad ogni modifica di un servizio, questa modifica non richiede adattamenti in altri servizi (a meno di modifiche di funzionalità offerte). _Se 2 o più servizi vengono aggiornati spesso insieme probabilmente essi dovrebbero essere uniti._
 
+## Checklist delle peculiarità delle architetture a microservizi
+
+-   I servizi in un'architettura a microservizi sono processi indipendenti che comunicano tra loro utilizzando un canale di comunicazione condiviso (ad es. la rete).
+-   I servizi in un'architettura a microservizi dovrebbero essere rilasciabili ed eseguibili indipendentemente.
+-   I servizi devono essere semplici da aggiornare ed eventualmente rimpiazzare.
+-   I diversi servizi possono essere implementati con tecnologie diverse, prestando attenzione a quali tecnologie sono più adatte per un certo tipo di funzionalità.
+-   I servizi sono componenti atomiche: sono delimitati dal contesto e dalle funzionalità richieste, sono sviluppati autonomamente in maniera decentralizzata.
+-   Le architetture a microservizi forzano l'utilizzo di strutture modulari.
+-   In un'architettura a microservizi, una modifica in una piccola parte dell'applicazione richiede che solamente uno o pochi servizi siano ricompilati e rilasciati.
+
 # Note
 
 <a name="1">1:</a> Throughput indica la capacità di un canale di comunicazione di processare o trasmettere dati in uno specifico periodo di tempo. É una misura di produttività.
