@@ -56,14 +56,17 @@ Il difetto che si annovera all'uso di servizi come componenti risiede nell'utili
 ## Organizzazione aziendale
 
 Altre differenze sono riscontrabili anche dal punto di vista della suddivisione delle persone impegnate nello sviluppo dell'applicazione.
-Solitamente applicazioni complesse sviluppate seguendo l'architettura monolitica sono divise in _team_ con **competenze isolate**: team esperto in UI, team specializzato in DB Management, ecc. Quando le persone sono così fortemente isolate, anche una semplice modifica può richiedere **l'intervento di altre persone in team diversi**, causando inefficienze nel processo di sviluppo.
-L'approccio microservices-oriented alla suddivisione invece pone l'accento sulle capacità di business: ogni team inerente un particolare settore di business **si occupa dell'intero prodotto** per quel settore (sviluppando interamente UI, DB, ecc.). I team in questo approccio sono multidisciplinari e gli scambi con altri settori riflettono le effettive dipendenze tra un settore e un altro all'interno dell'azienda.
+Solitamente applicazioni complesse sviluppate seguendo l'architettura monolitica sono divise in _team_ con **competenze isolate**: _team_ esperto in UI, _team_ specializzato in DB Management, ecc. Quando le persone sono così fortemente isolate, anche una semplice modifica può richiedere **l'intervento di altre persone in _team_ diversi**, causando inefficienze nel processo di sviluppo.
+L'approccio microservices-oriented alla suddivisione invece pone l'accento sulle capacità di business: ogni _team_ inerente un particolare settore di business **si occupa dell'intero prodotto** per quel settore (sviluppando interamente UI, DB, ecc.). I _team_ in questo approccio sono multidisciplinari e gli scambi con altri settori riflettono le effettive dipendenze tra un settore e un altro all'interno dell'azienda.
 
-Un esempio di quest'approccio alla suddivisione lo si ritrova in Amazon, dove vige il motto _"you build, you run it"_ (_"tu lo costruisci, tu lo esegui"_). In Amazon ogni team ha completa responsabilità del prodotto anche in ambiente di produzione, mettendo in comunicazione diretta sviluppatori e utenti del prodotto per le attività di supporto e manutenzione.
+Un esempio di quest'approccio alla suddivisione lo si ritrova in Amazon, dove vige il motto _"you build, you run it"_ (_"tu lo costruisci, tu lo esegui"_). In Amazon ogni _team_ ha completa responsabilità del prodotto anche in ambiente di produzione, mettendo in comunicazione diretta sviluppatori e utenti del prodotto per le attività di supporto e manutenzione.
 
 ## Comunicazione tra servizi
 
-Applicazioni assemblate con microservizi mirano ad essere **più disaccoppiate e più coese possibile**: ricevendo una richiesta, applicando la propria logica e producendo una risposta.  
+Applicazioni assemblate con microservizi mirano ad essere **più disaccoppiate e più coese possibile**: ricevendo una richiesta, applicando la propria logica e producendo una risposta.
+
+![Semplice diagramma della comunicazione tra un servizio e il suo utente](./images/services_comms.png)
+
 Le comunicazioni tra servizi sono orchestrate usando semplici protocolli REST-like<sub>[5](#5)</sub>.
 I 2 protocolli più usati sono:
 
