@@ -59,6 +59,8 @@ Altre differenze sono riscontrabili anche dal punto di vista della suddivisione 
 Solitamente applicazioni complesse sviluppate seguendo l'architettura monolitica sono divise in _team_ con **competenze isolate**: _team_ esperto in UI, _team_ specializzato in DB Management, ecc. Quando le persone sono così fortemente isolate, anche una semplice modifica può richiedere **l'intervento di altre persone in _team_ diversi**, causando inefficienze nel processo di sviluppo.
 L'approccio microservices-oriented alla suddivisione invece pone l'accento sulle capacità di business: ogni _team_ inerente un particolare settore di business **si occupa dell'intero prodotto** per quel settore (sviluppando interamente UI, DB, ecc.). I _team_ in questo approccio sono multidisciplinari e gli scambi con altri settori riflettono le effettive dipendenze tra un settore e un altro all'interno dell'azienda.
 
+![Diagramma di confronto tra organizzazione tipica in un'architettura monolitica e in una a microservizi](./images/business_organization.png)
+
 Un esempio di quest'approccio alla suddivisione lo si ritrova in Amazon, dove vige il motto _"you build, you run it"_ (_"tu lo costruisci, tu lo esegui"_). In Amazon ogni _team_ ha completa responsabilità del prodotto anche in ambiente di produzione, mettendo in comunicazione diretta sviluppatori e utenti del prodotto per le attività di supporto e manutenzione.
 
 ## Comunicazione tra servizi
@@ -76,31 +78,35 @@ I 2 protocolli più usati sono:
 ## Decentralizzazione della gestione delle informazioni
 
 Quando un'applicazione è suddivisa in molteplici componenti sorgono naturalmente dubbi sulla gestione delle informazioni che ciascuna componente gestisce.
-Solitamente nelle architetture monolitiche i domini dell'applicazione vengono astratti utilizzando le stesse tecniche di modellazione; i modelli prodotti sono poi veicolati su singoli storage di dati (ad es. unico database).
-L'architettura a microservizi invece propone di concepire i modelli in autonomia per ogni singolo servizio, utilizzando le tecniche ritenute più appropriate.
+Solitamente nelle architetture monolitiche i domini dell'applicazione vengono astratti **scegliendo una fra le tecniche di modellazione disponibili e applicandola a tutti i domini**; i modelli prodotti sono poi veicolati su singoli storage di dati (ad es. unico database).
+L'architettura a microservizi invece propone di **concepire i modelli in autonomia per ogni singolo servizio**, utilizzando le tecniche ritenute più appropriate.
 Questa decentralizzazione dei modelli si riflette anche sulla decentralizzazione delle decisioni di storage dei dati.
-Ogni servizio gestisce il proprio database: il database potrebbe essere quindi un'istanza di una stessa piattaforma tecnologica oppure una piattaforma specifica e ottimizzata per il caso d'uso del servizio. Questo approccio alla gestione della persistenza è chiamato **Polyglot Persistence**<sub>[6](#6)</sub>.
-La decentralizzazione delle decisioni di storage implica una maggior attenzione agli aggiornamenti dei dati.
+**Ogni servizio gestisce il proprio database**: il database potrebbe essere quindi un'istanza di una stessa piattaforma tecnologica oppure una piattaforma specifica e ottimizzata per il caso d'uso del servizio.
+Questo approccio alla gestione della persistenza è chiamato **Polyglot Persistence**<sub>[6](#6)</sub>.
+
+![Diagramma di confronto tra gestione dei dati tipica in un'architettura monolitica e in una a microservizi](./images/data_storage.png)
+
+La decentralizzazione delle decisioni di storage implica una maggior attenzione verso gli aggiornamenti dei dati.
 L'approccio comune agli aggiornamenti in un'architettura monolitica è quello di usare le transazioni per garantire la consistenza dei dati prima e dopo ciascun aggiornamento.
-L'utilizzo di transazioni è un grave limite per l'architettura a microservizi, in quanto le transazioni impongono un ordine temporale che potrebbe non essere rispettato, causando inconsistenze dei dati salvati.
-É per questo che le architetture a microservizi enfatizzano l'utilizzo di comunicazioni non vincolanti (_transactionless_): eventuali inconsistenze vengono segnalate e risolte grazie a operazioni  correttive.
+L'utilizzo di **transazioni** è un **grave limite per l'architettura a microservizi**, in quanto le transazioni impongono un ordine temporale che potrebbe non essere rispettato, causando inconsistenze dei dati salvati.
+É per questo che le architetture a microservizi enfatizzano l'utilizzo di comunicazioni non vincolanti (_transactionless_): eventuali inconsistenze vengono segnalate e risolte grazie a operazioni correttive.
 
 ## Note di progettazione
 
-Una conseguenza nell'utilizzo dei servizi come componenti è che le applicazioni devono prevedere e tollerare malfunzionamenti nei servizi.
+Una conseguenza nell'utilizzo dei servizi come componenti è che le applicazioni devono **prevedere e tollerare malfunzionamenti** nei servizi.
 L'utilizzatore dei servizi deve quindi rispondere ai malfunzionamenti nel modo più elegante possibile.
 Dato l'aumento di complessità, questo è da annoverare tra i difetti delle architetture a microservizi.
-Dal momento che i servizi possono malfungere in ogni momento, è fondamentale riuscire a:
+Dal momento che i servizi possono malfungere in ogni momento, è **fondamentale** riuscire a:
 
 1.  monitorare il servizio,
 2.  segnalare il malfunzionamento e
 3.  ripristinare automaticamente il servizio
 
 nel più breve tempo possibile.
-Conseguentemente, ogni servizio deve essere progettato focalizzando l'attenzione sulle attività di monitoring, individuando le metriche rilevanti (ad es. throughput, latenza, ecc.).
+Conseguentemente, ogni servizio deve essere progettato focalizzando l'**attenzione sulle attività di monitoring**, individuando le metriche rilevanti (ad es. throughput, latenza, ecc.).
 
-Utilizzando i servizi come componenti ci si chiede spesso quante responsabilità debbano avere ciascun servizio: la caratteristica fondamentale da osservare è la nozione di sostituzione e aggiornamento indipendenti.
-Un buon segnale lo si ritrova quando ad ogni modifica di un servizio, questa modifica non richiede adattamenti in altri servizi (a meno di modifiche di funzionalità offerte). Se 2 o più servizi vengono aggiornati spesso insieme significa che probabilmente essi dovrebbero essere uniti.
+Utilizzando i servizi come componenti ci si chiede spesso **quante responsabilità** debba avere ciascun servizio: la caratteristica fondamentale da osservare è la nozione di sostituzione e aggiornamento indipendenti.
+Un buon segnale lo si ritrova quando ad ogni modifica di un servizio, questa modifica non richiede adattamenti in altri servizi (a meno di modifiche di funzionalità offerte). _Se 2 o più servizi vengono aggiornati spesso insieme probabilmente essi dovrebbero essere uniti._
 
 # Note
 
@@ -112,3 +118,7 @@ Un buon segnale lo si ritrova quando ad ogni modifica di un servizio, questa mod
 
 <a name="4">4:</a> L'accoppiamento indica il grado di dipendenza che ciascuna componente del sistema ha con le altre componenti. Un basso grado di accoppiamento è indice di un sistema ben strutturato, in cui le componenti svolgono le rispettive funzionalità indipendentemente dalle altre.
 É una misura strettamente legata alla coesione. La coesione misura quanto siano affini le funzionalità disponibili in una singola componente.
+
+<a name="5">5:</a> REST, acronimo di **REpresentational State Transfer**, è un tipo di architettura software che mira a realizzare applicazioni web scalabili utilizzando pochi ma fondamentali principi di progettazione.
+
+<a name="6">6:</a> Con _Polyglot Persistence_ si intende un approccio alla gestione dei dati in cui per ciascuna tipologia di dato si utilizzano le tecnologie di storage più appropriate. Maggiore approfondimento qui: [Martin Fowler - Polyglot Persistence](https://martinfowler.com/bliki/PolyglotPersistence.html) (<https://martinfowler.com/bliki/PolyglotPersistence.html>).
