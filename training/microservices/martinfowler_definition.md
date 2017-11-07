@@ -8,17 +8,20 @@ L'espressione "_Architettura a microservizi_" è sempre più comune tra gli svil
 
 # Architetture a confronto: **Microservizi** vs **Monolitiche**
 Un'applicazione monolitica è **progettata e costruita per essere una singola unità in esecuzione**. Solitamente un'applicazione web monolitica è divisa in 3 parti:
-1.   interfaccia utente (pagine web);
-2.   database;
-3.   applicazione server.
+
+1.  interfaccia utente (pagine web);
+2.  database;
+3.  applicazione server.
 
 A sua volta, l'applicazione server:
+
 -   gestisce le richieste HTTP;
 -   esegue la business logic dell'applicazione;
 -   carica e aggiorna dati dal/nel database;
 -   seleziona e popola le pagine web inviate al browser dell'utente.
 
 Nelle applicazioni monolitiche si cerca di organizzare le **componenti** del sistema sfruttando i costrutti fondamentali dei linguaggi di programmazione:
+
 -   funzioni;
 -   classi;
 -   namespace o package.
@@ -26,6 +29,7 @@ Nelle applicazioni monolitiche si cerca di organizzare le **componenti** del sis
 Per aumentare la **disponibilità** delle applicazioni monolitiche si usa **replicare istanze dell'applicazione in molteplici server**, avendo un server di load balancing che bilancia il traffico nel modo più appropriato.
 
 Tra i difetti delle applicazioni monolitiche si possono evidenziare:
+
 -   modifiche a una piccola parte all'applicazione richiedono la **ricompilazione** e la **ridistribuzione** dell'applicazione;
 -   all'accrescere della complessità dell'applicazione aumenta anche la **difficoltà nel mantenere le modifiche isolate ai moduli di competenza**;
 -   scalare l'applicazione richiede l'esecuzione di istanze multiple della stessa applicazione, ignorando di fatto eventuali requisiti di efficienza (solitamente alcune componenti del sistema non richiedono un aumento di throughput<sub>[1](#1)</sub>).
