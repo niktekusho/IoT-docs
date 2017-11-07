@@ -1,7 +1,10 @@
-# Martin Fowler - Microservices
-_Fonte:_ [https://martinfowler.com/articles/microservices.html](https://martinfowler.com/articles/microservices.html)
+# Microservices
+_Fonti:_
 
-_Edizione HTML:_  [HTML](https://cdn.rawgit.com/niktekusho/IoT-docs/1844e1c2/training/microservices/martinfowler_definition.html)
+-   [https://martinfowler.com/articles/microservices.html](https://martinfowler.com/articles/microservices.html)
+-   [https://en.wikipedia.org/wiki/Microservices](https://en.wikipedia.org/wiki/Microservices)
+
+_Edizione HTML:_  [HTML](https://cdn.rawgit.com/niktekusho/IoT-docs/1844e1c2/training/microservices/microservices.html)
 
 # Introduzione
 L'espressione "_Architettura a microservizi_" è sempre più comune tra gli sviluppatori di applicazioni enterprise per descrivere un metodo di progettazione delle applicazioni come **insiemi di servizi eseguibili indipendentemente** (ogni servizio esegue su un processo indipendente), **che comunicano tra loro grazie a meccanismi di comunicazione leggeri** (solitamente attraverso API HTTP).
