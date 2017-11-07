@@ -80,7 +80,24 @@ Ogni servizio gestisce il proprio database: il database potrebbe essere quindi u
 La decentralizzazione delle decisioni di storage implica una maggior attenzione agli aggiornamenti dei dati.
 L'approccio comune agli aggiornamenti in un'architettura monolitica è quello di usare le transazioni per garantire la consistenza dei dati prima e dopo ciascun aggiornamento.
 L'utilizzo di transazioni è un grave limite per l'architettura a microservizi, in quanto le transazioni impongono un ordine temporale che potrebbe non essere rispettato, causando inconsistenze dei dati salvati.
-É per questo che le architetture a microservizi enfatizzano l'utilizzo di comunicazioni non vincolanti (_transactionless_): eventuali inconsistenze vengono segnalate e risolte grazie a operazioni di compensazione.
+É per questo che le architetture a microservizi enfatizzano l'utilizzo di comunicazioni non vincolanti (_transactionless_): eventuali inconsistenze vengono segnalate e risolte grazie a operazioni  correttive.
+
+## Note di progettazione
+
+Una conseguenza nell'utilizzo dei servizi come componenti è che le applicazioni devono prevedere e tollerare malfunzionamenti nei servizi.
+L'utilizzatore dei servizi deve quindi rispondere ai malfunzionamenti nel modo più elegante possibile.
+Dato l'aumento di complessità, questo è da annoverare tra i difetti delle architetture a microservizi.
+Dal momento che i servizi possono malfungere in ogni momento, è fondamentale riuscire a:
+
+1.  monitorare il servizio,
+2.  segnalare il malfunzionamento e
+3.  ripristinare automaticamente il servizio
+
+nel più breve tempo possibile.
+Conseguentemente, ogni servizio deve essere progettato focalizzando l'attenzione sulle attività di monitoring, individuando le metriche rilevanti (ad es. throughput, latenza, ecc.).
+
+Utilizzando i servizi come componenti ci si chiede spesso quante responsabilità debbano avere ciascun servizio: la caratteristica fondamentale da osservare è la nozione di sostituzione e aggiornamento indipendenti.
+Un buon segnale lo si ritrova quando ad ogni modifica di un servizio, questa modifica non richiede adattamenti in altri servizi (a meno di modifiche di funzionalità offerte). Se 2 o più servizi vengono aggiornati spesso insieme significa che probabilmente essi dovrebbero essere uniti.
 
 # Note
 
