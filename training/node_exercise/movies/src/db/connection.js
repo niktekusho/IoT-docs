@@ -1,6 +1,6 @@
 const knex = require('knex');
 
-const config = require('../config/config');
+const config = require('../config');
 
 // check if the node process is in production or in development
 const env = process.env.NODE_ENV || 'development';

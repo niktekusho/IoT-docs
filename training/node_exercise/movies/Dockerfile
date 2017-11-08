@@ -1,24 +1,21 @@
-FROM node:8-alpine
-
-# install bash
-RUN apk add --update bash && rm -rf /var/cache/apk/*
+FROM node:8
 
 # create app directory and change to it
-RUN mkdir -p /app
-WORKDIR /app
+RUN mkdir /usr/src/app
+WORKDIR /usr/src
 
 # add locally installed node packages to the PATH
-ENV PATH app/node_modules/.bin:$PATH
+ENV PATH /usr/src/node_modules/.bin:$PATH
 
 # copy basic stuff and install dependencies
-COPY package.json yarn.lock /app/
+COPY package.json yarn.lock /usr/src/
 RUN yarn install
 
 # copy application
-COPY ./src /app/src/
+COPY ./src /usr/src/src/
 
 # copy entrypoint
-COPY entrypoint.sh /app
+COPY entrypoint.sh /usr/src/
 
 # make entrypoint executable
 RUN chmod +x ./entrypoint.sh
