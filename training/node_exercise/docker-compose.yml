@@ -1,0 +1,29 @@
+version: '2.1'
+
+services:
+  movies-db:
+    container_name: movies-db
+    build: ./movies/src/db/
+    ports:
+      - '5434:5432' # HOST:CONTAINER
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: exit 0
+
+  movies-service:
+    container_name: movies-service
+    build: ./movies/
+    ports:
+      - '3001:3000'
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@movies-db:5432/movies_dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@movies-db:5432/movies_test
+      - NODE_ENV=test
+      - TOKEN_SECRET=blabla
+    depends_on:
+      movies-db:
+        condition: service_healthy
+    links:
+      - movies-db
