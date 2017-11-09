@@ -1,3 +1,5 @@
+[_Torna al documento precedente/Back_](..)
+
 # Introduzione/_Intro_
 Questa sezione del repository contiene una breve dissertazione sulle tecnologie che verranno impiegate nel progetto.  
 Le tecnologie chiave per l'implementazione del progetto sono React<sub>[1](#1)</sub> e Node.JS<sub>[2](#2)</sub>.
