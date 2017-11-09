@@ -4,8 +4,8 @@ Le tecnologie chiave per l'implementazione del progetto sono React<sub>[1](#1)</
 
 # Documenti/_Documents_
 
--   [**React**](./react.md)
--   [**Node.JS**](./node.md)
+-   [**React** - `./react.md`](./react.md)
+-   [**Node.JS** - `./node.md`](./node.md)
 
 # Note
 <a name="1">1:</a> [_**A JavaScript library for building user interfaces**_ - https://reactjs.org/](https://reactjs.org/)
