@@ -20,5 +20,10 @@ COPY entrypoint.sh /usr/src/
 # make entrypoint executable
 RUN chmod +x ./entrypoint.sh
 
+# docker image build time argument
+ARG USERS_SERVICE_URL
+
+ENV USERS_SERVICE_URL=$USERS_SERVICE_URL
+
 # start app
 CMD ["./entrypoint.sh"]

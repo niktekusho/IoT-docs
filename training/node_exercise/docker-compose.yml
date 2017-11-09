@@ -33,6 +33,7 @@ services:
       - DATABASE_TEST_URL=postgres://postgres:postgres@movies-db:5432/movies_test
       - NODE_ENV=development
       - TOKEN_SECRET=blabla
+      - USERS_SERVICE_URL=http://localhost:3000
     depends_on:
       movies-db:
         condition: service_healthy
@@ -57,3 +58,23 @@ services:
         condition: service_healthy
     links:
       - users-db
+
+  web-service:
+    container_name: web-service
+    build: ./web/
+    ports:
+      - '3007:9000'
+    environment:
+      - NODE_ENV=development
+      #- REACT_APP_USERS_SERVICE_URL=${REACT_APP_USERS_SERVICE_URL}
+      #- REACT_APP_MOVIES_SERVICE_URL=h${REACT_APP_MOVIES_SERVICE_URL}
+      - REACT_APP_MOVIES_SERVICE_URL=http://localhost:3001
+      - REACT_APP_USERS_SERVICE_URL=http://localhost:3000
+    depends_on:
+      users-service:
+        condition: service_started
+      movies-service:
+        condition: service_started
+    links:
+      - users-service
+      - movies-service

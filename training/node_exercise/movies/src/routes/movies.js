@@ -11,7 +11,7 @@ function ensureAuthenticated(req, res, next) {
   }
   const options = {
     method: 'GET',
-    uri: 'http://users-service:3000/users/user',
+    uri: `${process.env.USERS_SERVICE_URL}/users/user`,
     json: true,
     headers: {
       'Content-Type': 'application/json',
