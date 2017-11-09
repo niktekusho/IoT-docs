@@ -6,3 +6,4 @@ _This section of the repository contains notes and exercises related to the trai
 # Indice/_Index_
 
 -   [Microservices](./microservices/microservices.md) - `./microservices/microservices`
+-   [Esercizio in Node/_Exercise in Node_](./node_exercise) - `./node_exercise`
