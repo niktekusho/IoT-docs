@@ -12,6 +12,17 @@ services:
     healthcheck:
       test: exit 0
 
+  users-db:
+    container_name: users-db
+    build: ./users/src/db
+    ports:
+      - '5433:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: exit 0
+
   movies-service:
     container_name: movies-service
     build: ./movies/
@@ -20,10 +31,29 @@ services:
     environment:
       - DATABASE_URL=postgres://postgres:postgres@movies-db:5432/movies_dev
       - DATABASE_TEST_URL=postgres://postgres:postgres@movies-db:5432/movies_test
-      - NODE_ENV=test
+      - NODE_ENV=development
       - TOKEN_SECRET=blabla
     depends_on:
       movies-db:
         condition: service_healthy
+      users-service:
+        condition: service_started
     links:
       - movies-db
+      - users-service
+
+  users-service:
+    container_name: users-service
+    build: ./users/
+    ports:
+      - '3000:3000'
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@users-db:5432/users_dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/users_test
+      - NODE_ENV=development
+      - TOKEN_SECRET=blabla
+    depends_on:
+      users-db:
+        condition: service_healthy
+    links:
+      - users-db

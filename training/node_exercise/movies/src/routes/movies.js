@@ -19,14 +19,14 @@ function ensureAuthenticated(req, res, next) {
     },
   };
   return request(options).then((res) => {
-    req.user = res.user;
+    req.userId = res.user;
     return next();
   }).catch(err => next(err));
 }
 
 if (process.env.NODE_ENV === 'test') {
   ensureAuthenticated = (req, res, next) => {
-    req.user = 1;
+    req.userId = 1;
     return next();
   };
 }
@@ -50,6 +50,7 @@ router.get('/user', ensureAuthenticated, (req, res, next) => {
 // add a movie
 router.post('/', ensureAuthenticated, (req, res, next) => {
   req.body.user_id = req.userId;
+  console.log('test');
   return queries.addMovie(req.body).then(() => {
     res.json({
       status: 'success',

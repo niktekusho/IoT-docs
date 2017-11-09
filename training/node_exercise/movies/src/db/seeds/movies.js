@@ -6,5 +6,5 @@ exports.seed = (knex, Promise) => {
         title: 'Test',
       })
     );
-  }).catch(err => console.err(err));
+  }).catch(err => console.error(err));
 };
