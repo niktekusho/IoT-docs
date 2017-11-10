@@ -43,3 +43,4 @@ Questo approccio tuttavia presenta un grave difetto: Node non sfrutta i molti co
 Node utilizza npm (Node Package Manager) per installare le librerie utilizzabili nelle applicazioni. Npm scarica i pacchetti dal npm registry e gestisce le dipendenze tramite comandi disponibili da shell di comando.
 
 # Note
+<a name="1">1:</a> Il context switch è un'operazione del sistema operativo che cambia il processo correntemente in esecuzione, permettendo a più processi di condividere la stessa CPU.
