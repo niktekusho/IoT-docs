@@ -59,7 +59,7 @@ Il costruttore è il luogo migliore in cui inizializzare lo stato del componente
 
 #### `render()`
 É l'unico metodo d'interfaccia della classe `React.Component` e quindi è l'unico metodo che è obbligatorio implementare.
-É il metodo responsabile di ciò che React mostrerà a schermo definito nell'istruzione di ritorno:
+É il metodo responsabile di ciò che React mostrerà a schermo, utilizzando l'istruzione di ritorno:
 
 -   stringhe e numeri vengono mostrati direttamente come testo;
 -   valori logici (`boolean`) e  `null` non renderizzano;
@@ -70,11 +70,17 @@ La funzione `render()` dovrebbe essere pura, ossia non modificare lo stato del c
 #### `shouldComponentUpdate()`
 Il suo utilizzo è quello di intercettare un aggiornamento del componente per decidere se questo deve riflettere questo cambiamento. Il metodo deve ritornare un `boolean`:
 
--   `true` se il componente deve passare alla renderizzazione, accettando i cambiamenti ricevuti (default);
--   `false` se il componente deve saltare la renderizzazione.
+-   `true` se il componente deve accettare l'aggiornamento (default);
+-   `false` se il componente deve rifiutare l'aggiornamento.
 
 #### `didComponentUpdate()`
 Viene invocato quando il componente è stato aggiornato. L'utilizzo consigliato è quello di effettuare in questo metodo eventuali richieste di rete.
+
+
+#### `setState()`
+Lo sviluppatore invoca questo metodo quando desidera aggiornare lo stato del componente.
+L'invocazione di questo metodo accoda la richiesta di modifica dello stato in una coda, avendo la garanzia che React effettuerà questa modifica prima della prossima chiamata al metodo `render()`.
+
 
 # Note
 <a name="1">1:</a> Un _mockup_ è una rappresentazione di un progetto, dispositivo o sistema utilizzata nell'insegnamento, nelle dimostrazioni, nella promozione e nella valutazione del progetto stesso.
