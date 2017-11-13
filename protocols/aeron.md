@@ -1,5 +1,7 @@
 # Aeron
 
+[_Torna al documento indice_](./README.md)
+
 ## Introduzione
 Aeron è un protocollo di comunicazione ad alto throughput e a bassa latenza utilizzato in comunicazioni unicast<sub>[1](#1)</sub> e multicast<sub>[2](#2)</sub>.
 
@@ -83,4 +85,4 @@ Per estendere questo periodo di inattività, trasmettitore e ricevitore possono 
 
 <a name="2">2:</a> Nelle reti di calcolatori, multicast si riferisce a una trasmissione da un gruppo di trasmettitori a un gruppo di ricevitori simultaneamente (_1 a molti_ o _molti a molti_).
 
-<a name="3">3:</a> Il frame è una sequenza di bit che composti permettono la trasmissione di dati in una rete. Ogni frame è composto da un'intestazione seguita da un pacchetto. Generalmente il frame contiene informazioni extra necessarie a controllo e/o correzione degli errori e alla sincronizzazione dei dispositivi coinvolti nella comunicazione. 
+<a name="3">3:</a> Il frame è una sequenza di bit che composti permettono la trasmissione di dati in una rete. Ogni frame è composto da un'intestazione seguita da un pacchetto. Generalmente il frame contiene informazioni extra necessarie a controllo e/o correzione degli errori e alla sincronizzazione dei dispositivi coinvolti nella comunicazione.
