@@ -21,7 +21,7 @@ MQTT è stato progettato tra la fine degli anni '90 e l'inizio degli anni 2000 p
 
 ## Publish/Subscribe
 Il protocollo MQTT si basa sul principio che ogni client pubblica messaggi, i quali hanno uno o più argomenti/tipi.
-Inoltre ogi client può  registrarsi a determinati argomenti, per ricevere tutti i messaggi che altri client **pubblicano** per quell'argomento. Molti client si connettono a un  _broker_<sub>[2](#2)</sub> che funziona da tramite, ricevendo i messaggi pubblicati e inoltrandoli a tutti i client sottoscritti per quegli argomenti.
+Ogni client può registrarsi a determinati argomenti, per ricevere tutti i messaggi che altri client **pubblicano** per quell'argomento. Molti client si connettono a un  _broker_<sub>[2](#2)</sub> che funziona da tramite, ricevendo i messaggi pubblicati e inoltrandoli a tutti i client sottoscritti ai rispettivi argomenti.
 
 Gli argomenti in MQTT sono trattati gerarchicamente. Questo permette la creazione di argomenti e sottoargomenti, simili alla struttura ad albero di un filesystem.
 
