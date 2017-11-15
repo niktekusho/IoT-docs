@@ -53,7 +53,7 @@ I sensori hanno 2 funzionalità principali:
 Una funzionalità opzionale è quella di avere a disposizione una piccola area di **memorizzazione locale** al sensore, utile in caso di perdita di connessione o malfunzionamento del centro di controllo.
 Nel caso in cui questa funzionalità sia presente, il sensore provvede a trasmettere i dati raccolti alla prossima riconnessione con il centro di controllo.
 
-Ai sensori può inoltre essere richiesto di disconnettersi dalla rete per un periodo di tempo.
+Il centro di controllo può inoltre richiedere ai sensori di disconnettersi dalla rete per un periodo di tempo per motivi di diagnostica o di sovraccarico della rete.
 
 | Funzionalità dei sensori | Frequenza | Attivazione | Obbligatorietà |
 | ------------------------ | --------- | ----------- |:--------------:|
