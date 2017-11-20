@@ -47,7 +47,7 @@ Tutti i dispositivi contengono al loro interno informazioni relative a modello, 
 
 #### Funzioni del prodotto: sensori
 
-La funzionalità principale che offrono i sensori è l'invio di informazioni periodicamente legati a ciò che il sensore misura.
+La funzionalità principale offerta dai sensori è l'invio di informazioni periodicamente legati a ciò che il sensore misura.
 
 L'invio di informazioni periodiche avviene in automatico, secondo i parametri impostati dal produttore del sensore.
 
