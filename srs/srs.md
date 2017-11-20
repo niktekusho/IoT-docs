@@ -35,7 +35,7 @@ Data la natura altamente dinamica di questo mercato una delle funzioni del prodo
 I dispositivi collegati al sistema possono trattarsi di 2 tipologie:
 
 1.  sensori, la cui unica funzione è quella di trasmettere informazioni riguardanti lo stato di un particolare ambiente o oggetto (temperatura di una stanza);
-2.  dispositivi attivi, che possono rispondere a determinati eventi così come trasmettere informazioni (sistema di videosorveglianza).
+2.  dispositivi attivi, che rispondono a determinati eventi in modi prestabiliti.
 
 Entrambe le categorie di dispositivi comunicano con il sistema utilizzando il protocollo **MQTT**<sub>[1](#1)</sub>, ritenuto dallo studente il protocollo più adatto per il sistema in quanto esso:
 
@@ -45,22 +45,41 @@ Entrambe le categorie di dispositivi comunicano con il sistema utilizzando il pr
 
 #### Funzioni del prodotto: sensori
 
-I sensori hanno 2 funzionalità principali:
+La funzionalità principale che offrono i sensori è l'invio di informazioni periodicamente legati a ciò che il sensore misura.
 
-1.  invio di informazioni periodicamente;
-2.  risposta ad una richiesta di misurazione.
+L'invio di informazioni periodiche avviene in automatico, secondo i parametri impostati dal produttore del sensore.
 
-Una funzionalità opzionale è quella di avere a disposizione una piccola area di **memorizzazione locale** al sensore, utile in caso di perdita di connessione o malfunzionamento del centro di controllo.
-Nel caso in cui questa funzionalità sia presente, il sensore provvede a trasmettere i dati raccolti alla prossima riconnessione con il centro di controllo.
+Altre 2 funzionalità legate alle _capabilities hardware_ del sensore sono:
 
-Il centro di controllo può inoltre richiedere ai sensori di disconnettersi dalla rete per un periodo di tempo per motivi di diagnostica o di sovraccarico della rete.
+1.  **memorizzazione locale**: il produttore dota il sensore di una piccola memoria riscrivibile, interrogabile direttamente producendo dati in un formato stabilito dal produttore. Nei casi d'uso presi in considerazione questa funzionalità è utile in caso di perdita di connessione o malfunzionamento del centro di controllo. Nel caso in cui questa funzionalità sia presente, il sensore provvede a trasmettere i dati raccolti alla prossima riconnessione con il centro di controllo.
+2.  **disconnessione forzata**: il centro di controllo può richiedere ai sensori di disconnettersi dalla rete per un periodo di tempo per motivi di diagnostica o di sovraccarico della rete. Questa funzionalità richiede che il sensore abbia hardware in grado di ricevere segnali e non solo trasmetterli.
 
 | Funzionalità dei sensori | Frequenza | Attivazione | Obbligatorietà |
 | ------------------------ | --------- | ----------- |:--------------:|
 | Invio informazioni       | Periodica | Automatica  |    &#10004;    |
-| Misurazione Spot         | Singola   | Manuale     |    &#10004;    |
 | Memoria locale           | N.D.      | Automatica  |    &#10005;    |
-| Disconnessione           | Singola   | Manuale     |    &#10004;    |
+| Disconnessione forzata   | Singola   | Manuale     |    &#10005;    |
+
+
+#### Funzioni del prodotto: dispositivi attivi
+
+I dispositivi attivi presentano le seguenti funzionalità:
+
+1.  lista degli eventi gestiti dal dispositivo;
+2.  risposta agli eventi esterni;
+3.  invio di informazioni sullo stato energetico del dispositivo.
+
+La lista degli eventi gestiti deve essere richiesta al dispositivo per conoscere le sue funzionalità e inviare gli eventi corretti.
+La risposta agli eventi gestiti è automatica e avviene a ogni evento occorso.
+Le funzionalità legate alla gestione degli eventi sono direttamente implementate dai produttori dei dispositivi.
+
+L'invio delle informazioni sullo stato energetico del dispositivo richiede che il produttore abbia dotato il dispositivo di unità di _power management_ e perciò potrebbe non essere disponibile per tutti i dispositivi collegati.
+
+| Funzionalità dei dispositivi attivi | Frequenza               | Attivazione | Obbligatorietà |
+| ----------------------------------- | ----------------------- | ----------- |:--------------:|
+| Lista eventi gestiti                | Singola                 | Manuale     |    &#10004;    |
+| Risposta eventi gestiti             | Ad ogni evento ricevuto | Automatica  |    &#10004;    |
+| Informazioni stato energetico       | Singola                 | Automatica  |    &#10005;    |
 
 # Note
 

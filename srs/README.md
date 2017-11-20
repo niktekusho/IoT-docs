@@ -5,4 +5,4 @@ Questa sezione del repository contiene le Analisi dei Requisiti dei servizi che 
 
 # Documenti/_Documents_
 
--   [**Sensori** - `./sensors.md`](./sensors.md)
+-   [**Analisi dei Requisiti** - `./srs.md`](./srs.md)
