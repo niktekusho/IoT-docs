@@ -1,10 +1,10 @@
-# Analisi dei Requisiti: sensori
+# Analisi dei Requisiti
 
 ## Introduzione
 
 ### Scopo del documento
 
-Lo scopo di questo documento è quello di definire i requisiti emersi dall’analisi del progetto di stage per i servizi legati alla comunicazione dei sensori.
+Lo scopo di questo documento è quello di definire i requisiti emersi dall’analisi del progetto di stage.
 Il presente, tra le altre cose, tratta di:
 
 -   descrizione dei requisiti;
@@ -43,6 +43,8 @@ Entrambe le categorie di dispositivi comunicano con il sistema utilizzando il pr
 2.  è un protocollo efficiente in quanto trasmette informazioni con un overhead minimo;
 3.  è un protocollo che permette l'aggiunta e la rimozione di dispositivi dinamicamente,  richiedendo intervento manuale minimo all'utente.
 
+Tutti i dispositivi contengono al loro interno informazioni relative a modello, revisione, produttore e anno di produzione del dispositivo.
+
 #### Funzioni del prodotto: sensori
 
 La funzionalità principale che offrono i sensori è l'invio di informazioni periodicamente legati a ciò che il sensore misura.
@@ -79,7 +81,28 @@ L'invio delle informazioni sullo stato energetico del dispositivo richiede che i
 | ----------------------------------- | ----------------------- | ----------- |:--------------:|
 | Lista eventi gestiti                | Singola                 | Manuale     |    &#10004;    |
 | Risposta eventi gestiti             | Ad ogni evento ricevuto | Automatica  |    &#10004;    |
-| Informazioni stato energetico       | Singola                 | Automatica  |    &#10005;    |
+| Informazioni stato energetico       | Singola                 | Manuale     |    &#10005;    |
+
+
+#### Funzioni del prodotto: centro di controllo
+
+Il centro di controllo è il sistema, composto da un insieme di servizi, che:
+
+1.  gestisce i dispositivi collegati al sistema;
+2.  riceve, elabora e memorizza le informazioni utili provenienti dai dispositivi (anche per fini diagnostici);
+3.  mette a disposizione le informazioni raccolte per i client che interrogano il centro di controllo.
+
+Il dati ricevuti dal centro di controllo possono in una forma grezza e perciò è necessario che il centro di controllo li elabori, a seconda della provenienza dei dati, al fine di renderli comprensibili anche da umani.
+Le informazioni raccolte sono messe a disposizione ai client in tempo reale.
+
+### Caratteristiche degli utenti del sistema
+
+Lo studente prevede che gli utenti del sistema non abbiano alcuna competenza particolare.
+
+### Piattaforma di esecuzione
+
+La piattaforma di esecuzione del prodotto è Docker, attraverso la composizione di container.
+L'utente accede alle funzionalità del prodotto attraverso una interfaccia Web, opportunamente progettata per essere reattiva (ottimizzata per mobile).
 
 # Note
 
