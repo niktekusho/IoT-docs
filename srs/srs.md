@@ -56,11 +56,11 @@ Altre 2 funzionalità legate alle _capabilities hardware_ del sensore sono:
 1.  **memorizzazione locale**: il produttore dota il sensore di una piccola memoria riscrivibile, interrogabile direttamente producendo dati in un formato stabilito dal produttore. Nei casi d'uso presi in considerazione questa funzionalità è utile in caso di perdita di connessione o malfunzionamento del centro di controllo. Nel caso in cui questa funzionalità sia presente, il sensore provvede a trasmettere i dati raccolti alla prossima riconnessione con il centro di controllo.
 2.  **disconnessione forzata**: il centro di controllo può richiedere ai sensori di disconnettersi dalla rete per un periodo di tempo per motivi di diagnostica o di sovraccarico della rete. Questa funzionalità richiede che il sensore abbia hardware in grado di ricevere segnali e non solo trasmetterli.
 
-| Funzionalità dei sensori | Frequenza | Attivazione | Obbligatorietà |
-| ------------------------ | --------- | ----------- |:--------------:|
-| Invio informazioni       | Periodica | Automatica  |    &#10004;    |
-| Memoria locale           | N.D.      | Automatica  |    &#10005;    |
-| Disconnessione forzata   | Singola   | Manuale     |    &#10005;    |
+| Funzionalità dei sensori | Frequenza    | Attivazione | Obbligatorietà |
+| ------------------------ | ------------ | ----------- |:--------------:|
+| Invio informazioni       | Periodica    | Automatica  |    &#10004;    |
+| Memoria locale           | N.D.         | Automatica  |    &#10005;    |
+| Disconnessione forzata   | Su richiesta | Manuale     |    &#10005;    |
 
 
 #### Funzioni del prodotto: dispositivi attivi
@@ -80,9 +80,9 @@ L'invio delle informazioni sullo stato energetico del dispositivo richiede che i
 
 | Funzionalità dei dispositivi attivi | Frequenza               | Attivazione | Obbligatorietà |
 | ----------------------------------- | ----------------------- | ----------- |:--------------:|
-| Lista eventi gestiti                | Singola                 | Manuale     |    &#10004;    |
+| Lista eventi gestiti                | Su richiesta            | Manuale     |    &#10004;    |
 | Risposta eventi gestiti             | Ad ogni evento ricevuto | Automatica  |    &#10004;    |
-| Informazioni stato energetico       | Singola                 | Manuale     |    &#10005;    |
+| Informazioni stato energetico       | Su richiesta            | Manuale     |    &#10005;    |
 | Spegnimento                         | Su richiesta            | Manuale     |    &#10004;    |
 
 #### Funzioni del prodotto: centro di controllo
