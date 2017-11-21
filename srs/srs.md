@@ -129,6 +129,7 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
 -   **Dispositivi**: rappresentano l'insieme di apparati collegati al sistema che forniscono i dati per popolare la dashboard.
 
 ![Sommario dei casi d'uso](./images/use_cases.png)
+<p align="center"><i>Sommario dei casi d'uso</i></p>
 
 ### UC1: Visualizzazione dei dispositivi collegati
 
@@ -139,6 +140,7 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
 
 
 ![Approfondimento UC1](./images/UC1.png)
+<p align="center"><i>Approfondimento UC1</i></p>
 
 #### UC1.1: Visualizzazione dei dispositivi collegati secondo dominio applicativo
 
@@ -172,7 +174,47 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
 -   **Scopo e descrizione**:  
     L'utente interroga la dashboard per accedere alle funzionalità offerte dai dispositivi.
 
+![Approfondimento UC2](./images/UC2.png)
+<p align="center"><i>Approfondimento UC2</i></p>
 
+#### UC2.1: Visualizzazione dei dispositivi collegati
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. I dispositivi collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard presenta all'utente la lista di dispositivi collegati al sistema per permettere all'utente di selezionare quale dispositivo gestire.
+
+
+#### UC2.2: Creazione di un gruppo di dispositivi personalizzato dall'utente
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. I dispositivi collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard permette all'utente di creare un gruppo personalizzato di dispositivi, facilitando la visualizzazione dei dispositivi nella pagina principale della dashboard.
+
+
+#### UC2.3: Modifica di un gruppo di dispositivi personalizzato
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. I dispositivi collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard permette all'utente di modificare un gruppo personalizzato esistente per rinominare il gruppo e aggiungere o togliere uno o più dispositivi da un gruppo.
+
+
+#### UC2.4: Rimozione di un gruppo di dispositivi personalizzato
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. I dispositivi collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard permette all'utente di rimuovere un gruppo personalizzato esistente.
+
+
+#### UC2.5: Visualizzazione delle operazioni disponibili per il dispositivo selezionato dall'utente
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard permette all'utente di conoscere la lista delle operazioni disponibili per il dispositivo selezionato (ad esempio: accensione e spegnimento per una sorgente di illuminazione).
 
 ### UC3: Visualizzazione delle statistiche di sistema
 
