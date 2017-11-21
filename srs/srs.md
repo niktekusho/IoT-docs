@@ -109,7 +109,7 @@ L'utente accede alle funzionalità del prodotto attraverso una interfaccia Web, 
 
 I casi d’uso sono catalogati come:
 
-<p style="text-align: center;">**UC\[numero\]\[caso\]**</p>
+<p align="center">UC[numero][caso]</p>
 
 Dove:
 -   `UC` specifica che si sta parlando di un caso d’uso;
