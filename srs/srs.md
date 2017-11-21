@@ -111,7 +111,7 @@ I casi d’uso sono catalogati come:
 
 <p align="center">UC[numero][caso]</p>
 
-Dove:
+dove:
 -   `UC` specifica che si sta parlando di un caso d’uso;
 -   `numero` è assoluto e rappresenta un riferimento univoco al caso d’uso in questione;
 -   `caso` individua eventuali diramazioni all’interno dello stesso caso d’uso.
@@ -135,6 +135,31 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
 -   **Scopo e descrizione**:  
     L'utente interroga la dashboard per conoscere lo stato dei dispositivi collegati.
 
+
+![Approfondimento UC1](./images/UC1.png)
+
+#### UC1.1: Visualizzazione dei dispositivi collegati secondo dominio applicativo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. I dispositivi che forniscono le proprie informazioni alla dashboard.
+-   **Scopo e descrizione**:  
+    L'utente interroga la dashboard per conoscere lo stato dei dispositivi collegati. In questa visualizzazione la dashboard mostra i dispositivi raggruppati secondo dominio applicativo (gruppo relativo alla termodinamica domestica, gruppo relativo alla illuminazione, ecc.).
+
+
+#### UC1.2: Visualizzazione dei dispositivi collegati secondo gruppi definiti dall'utente
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. I dispositivi che forniscono le proprie informazioni alla dashboard.
+-   **Scopo e descrizione**:  
+    L'utente interroga la dashboard per conoscere lo stato dei dispositivi collegati. In questa visualizzazione la dashboard mostra i dispositivi raggruppati secondo le preferenze dell'utente.
+
+
+#### UC1.3: Visualizzazione del dispositivo selezionato dall'utente
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente che fornisce le proprie informazioni alla dashboard.
+-   **Scopo e descrizione**:  
+    L'utente interroga la dashboard per conoscere lo stato del dispositivo selezionato. In questa visualizzazione la dashboard mostra le informazioni provenienti dal dispositivo.
 
 
 
