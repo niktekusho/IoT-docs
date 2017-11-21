@@ -69,7 +69,8 @@ I dispositivi attivi presentano le seguenti funzionalità:
 
 1.  lista degli eventi gestiti dal dispositivo;
 2.  risposta agli eventi esterni;
-3.  invio di informazioni sullo stato energetico del dispositivo.
+3.  invio di informazioni sullo stato energetico del dispositivo;
+4.  spegnimento del dispositivo.
 
 La lista degli eventi gestiti deve essere richiesta al dispositivo per conoscere le sue funzionalità e inviare gli eventi corretti.
 La risposta agli eventi gestiti è automatica e avviene a ogni evento occorso.
@@ -82,7 +83,7 @@ L'invio delle informazioni sullo stato energetico del dispositivo richiede che i
 | Lista eventi gestiti                | Singola                 | Manuale     |    &#10004;    |
 | Risposta eventi gestiti             | Ad ogni evento ricevuto | Automatica  |    &#10004;    |
 | Informazioni stato energetico       | Singola                 | Manuale     |    &#10005;    |
-
+| Spegnimento                         | Su richiesta            | Manuale     |    &#10004;    |
 
 #### Funzioni del prodotto: centro di controllo
 
