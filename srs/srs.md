@@ -105,6 +105,57 @@ Lo studente prevede che gli utenti del sistema non abbiano alcuna competenza par
 La piattaforma di esecuzione del prodotto è Docker, attraverso la composizione di container.
 L'utente accede alle funzionalità del prodotto attraverso una interfaccia Web, opportunamente progettata per essere reattiva (ottimizzata per mobile).
 
+## Casi d'uso
+
+I casi d’uso sono catalogati come:
+
+<p style="text-align: center;">**UC\[numero\]\[caso\]**</p>
+
+Dove:
+-   `UC` specifica che si sta parlando di un caso d’uso;
+-   `numero` è assoluto e rappresenta un riferimento univoco al caso d’uso in questione;
+-   `caso` individua eventuali diramazioni all’interno dello stesso caso d’uso.
+
+
+La breve descrizione di ciascun caso d’uso presenta:
+-   gli attori del caso d’uso;
+-   lo scopo e la descrizione del caso d’uso.
+
+
+Di seguito viene presentata la lista degli attori dei casi d’uso:
+-   **Utente**: rappresenta l'utente che interagisce con la dashboard;
+-   **Dispositivi**: rappresentano l'insieme di apparati collegati al sistema che forniscono i dati per popolare la dashboard.
+
+![Sommario dei casi d'uso](./images/use_cases.png)
+
+### UC1: Visualizzazione dei dispositivi collegati
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. I dispositivi, forniscono le proprie informazioni alla dashboard.
+-   **Scopo e descrizione**:  
+    L'utente interroga la dashboard per conoscere lo stato dei dispositivi collegati.
+
+
+
+
+### UC2: Gestione dei dispositivi collegati
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. La dashboard permette l'accesso alle funzionalità messe a disposizione dai dispositivi.
+-   **Scopo e descrizione**:  
+    L'utente interroga la dashboard per accedere alle funzionalità offerte dai dispositivi.
+
+
+
+### UC3: Visualizzazione delle statistiche di sistema
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard.
+-   **Scopo e descrizione**:  
+    L'utente interroga la dashboard per visualizzare le statistiche di sistema per conoscerne lo stato di salute e diagnosticare eventuali malfunzionamenti.
+
+
+
 # Note
 
 <a name="1">1:</a> MQTT è un protocollo di messaggistica leggero nato per l'utilizzo con sensori a basso consumo energetico. Maggiori informazioni: [Analisi del protocollo MQTT - `../protocols/mqtt.md`](../protocols/mqtt.md).
