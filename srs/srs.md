@@ -1,4 +1,4 @@
-[_Torna al documento precedente/Back_](./README.md)
+[_Torna al documento indice/Back_](./README.md)
 
 # Analisi dei Requisiti
 
