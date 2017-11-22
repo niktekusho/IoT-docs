@@ -165,6 +165,40 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
 -   **Scopo e descrizione**:  
     L'utente interroga la dashboard per conoscere lo stato del dispositivo selezionato. In questa visualizzazione la dashboard mostra le informazioni provenienti dal dispositivo.
 
+![Approfondimento UC1.3](./images/UC1.3.png)
+<p align="center"><i>Approfondimento UC1.3</i></p>
+
+
+##### UC1.3.1: Visualizzazione delle informazioni provenienti dal dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    L'utente interroga la pagina della dashboard specifica per il dispositivo selezionato per conoscere le informazioni provenienti da esso (temperatura, stato di accensione, ecc.).
+
+
+##### UC1.3.2: Visualizzazione delle specifiche tecniche del dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    L'utente interroga la pagina della dashboard specifica per il dispositivo selezionato per conoscere le specifiche tecniche dello stesso (produttore, modello, revisione, anno di produzione).
+
+
+##### UC1.3.3: Visualizzazione delle operazioni disponibili per il dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard permette all'utente di conoscere la lista delle operazioni disponibili per il dispositivo selezionato (ad esempio: accensione e spegnimento per una sorgente di illuminazione).
+
+
+##### UC1.3.4: Collegamento all'interfaccia proprietaria del dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema. L'interfaccia predisposta dal produttore per il proprio dispositivo.
+-   **Scopo e descrizione**:  
+    La dashboard facilita l'accesso all'interfaccia proprietaria del dispositivo mettendo a disposizione all'utente un collegamento diretto.
 
 
 ### UC2: Gestione dei dispositivi collegati
