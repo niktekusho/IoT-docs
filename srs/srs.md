@@ -165,7 +165,90 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
 -   **Scopo e descrizione**:  
     L'utente interroga la dashboard per conoscere lo stato del dispositivo selezionato. In questa visualizzazione la dashboard mostra le informazioni provenienti dal dispositivo.
 
+![Approfondimento UC1.3](./images/UC1.3.png)
+<p align="center"><i>Approfondimento UC1.3</i></p>
 
+##### UC1.3.1: Visualizzazione delle informazioni provenienti dal dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente le informazioni provenienti dal dispositivo.
+
+![Approfondimento UC1.3.1](./images/UC1.3.1.png)
+<p align="center"><i>Approfondimento UC1.3.1</i></p>
+
+
+###### UC1.3.1.1: Visualizzazione nome del dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente il nome _user-friendly_ dato dal produttore al dispositivo.
+
+
+###### UC1.3.1.2: Visualizzazione categoria del dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente il dominio applicativo del dispositivo (illuminazione, ecc.).
+
+###### UC1.3.1.3: Visualizzazione dati provenienti dal dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente ii dati raccolti dal sistema provenienti dal dispositivo selezionato.
+
+
+##### UC1.3.2: Visualizzazione delle specifiche tecniche del dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente le specifiche tecniche del dispositivo.
+
+![Approfondimento UC1.3.2](./images/UC1.3.2.png)
+<p align="center"><i>Approfondimento UC1.3.2</i></p>
+
+
+###### UC1.3.2.1: Visualizzazione produttore del dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente il nome del produttore del dispositivo.
+
+
+###### UC1.3.2.2: Visualizzazione modello del dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente il nome commerciale scelto dal produttore per il  dispositivo.
+
+###### UC1.3.2.3: Visualizzazione revisione del dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente un identificativo di versione del dispositivo (anno o  numero di versione).
+
+##### UC1.3.3: Visualizzazione delle operazioni disponibili per il dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente le funzionalità offerte dal dispositivo.
+
+
+##### UC1.3.4: Collegamento all'interfaccia proprietaria del dispositivo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema. L'interfaccia proprietaria progettata e realizzata dal produttore del dispositivo.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente il collegamento all'interfaccia proprietaria del dispositivo.
 
 ### UC2: Gestione dei dispositivi collegati
 
@@ -192,6 +275,25 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
 -   **Scopo e descrizione**:  
     La dashboard permette all'utente di creare un gruppo personalizzato di dispositivi, facilitando la visualizzazione dei dispositivi nella pagina principale della dashboard.
 
+![Approfondimento UC2.2](./images/UC2.2.png)
+<p align="center"><i>Approfondimento UC2.2</i></p>
+
+
+###### UC2.2.1: Inserimento nome del gruppo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard.
+-   **Scopo e descrizione**:  
+    L'utente fornisce al sistema il nome del gruppo da creare.
+
+
+###### UC2.2.2: Scelta dei dispositivi da inserire nel gruppo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. I dispositivi collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard permette all'utente di scegliere quali dispositivi compongono il gruppo.
+
 
 #### UC2.3: Modifica di un gruppo di dispositivi personalizzato
 
@@ -200,6 +302,31 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
 -   **Scopo e descrizione**:  
     La dashboard permette all'utente di modificare un gruppo personalizzato esistente per rinominare il gruppo e aggiungere o togliere uno o più dispositivi da un gruppo.
 
+![Approfondimento UC2.3](./images/UC2.3.png)
+<p align="center"><i>Approfondimento UC2.3</i></p>
+
+
+###### UC2.3.1: Modifica nome del gruppo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard.
+-   **Scopo e descrizione**:  
+    La dashboard mostra all'utente il nome corrente del gruppo, permettendone la modifica.
+
+
+###### UC2.3.2: Aggiunta di nuovi dispositivi al gruppo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. I dispositivi collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard permette all'utente di scegliere quali dispositivi non presenti nel gruppo aggiungere.
+
+###### UC2.3.3: Rimozione di dispositivi esistenti dal gruppo
+
+-   **Attori**:  
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
+-   **Scopo e descrizione**:  
+    La dashboard permette all'utente di scegliere quali dispositivi presenti nel gruppo da rimuovere.
 
 #### UC2.4: Rimozione di un gruppo di dispositivi personalizzato
 
