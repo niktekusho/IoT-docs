@@ -161,7 +161,7 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
 #### UC1.3: Visualizzazione del dispositivo selezionato dall'utente
 
 -   **Attori**:  
-    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente che fornisce le proprie informazioni alla dashboard.
+    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
 -   **Scopo e descrizione**:  
     L'utente interroga la dashboard per conoscere lo stato del dispositivo selezionato. In questa visualizzazione la dashboard mostra le informazioni provenienti dal dispositivo.
 
