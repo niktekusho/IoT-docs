@@ -165,40 +165,6 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
 -   **Scopo e descrizione**:  
     L'utente interroga la dashboard per conoscere lo stato del dispositivo selezionato. In questa visualizzazione la dashboard mostra le informazioni provenienti dal dispositivo.
 
-![Approfondimento UC1.3](./images/UC1.3.png)
-<p align="center"><i>Approfondimento UC1.3</i></p>
-
-
-##### UC1.3.1: Visualizzazione delle informazioni provenienti dal dispositivo
-
--   **Attori**:  
-    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
--   **Scopo e descrizione**:  
-    L'utente interroga la pagina della dashboard specifica per il dispositivo selezionato per conoscere le informazioni provenienti da esso (temperatura, stato di accensione, ecc.).
-
-
-##### UC1.3.2: Visualizzazione delle specifiche tecniche del dispositivo
-
--   **Attori**:  
-    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
--   **Scopo e descrizione**:  
-    L'utente interroga la pagina della dashboard specifica per il dispositivo selezionato per conoscere le specifiche tecniche dello stesso (produttore, modello, revisione, anno di produzione).
-
-
-##### UC1.3.3: Visualizzazione delle operazioni disponibili per il dispositivo
-
--   **Attori**:  
-    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema.
--   **Scopo e descrizione**:  
-    La dashboard permette all'utente di conoscere la lista delle operazioni disponibili per il dispositivo selezionato (ad esempio: accensione e spegnimento per una sorgente di illuminazione).
-
-
-##### UC1.3.4: Collegamento all'interfaccia proprietaria del dispositivo
-
--   **Attori**:  
-    L'utente che interagisce con la dashboard. Il dispositivo selezionato dall'utente tra tutti quelli collegati al sistema. L'interfaccia predisposta dal produttore per il proprio dispositivo.
--   **Scopo e descrizione**:  
-    La dashboard facilita l'accesso all'interfaccia proprietaria del dispositivo mettendo a disposizione all'utente un collegamento diretto.
 
 
 ### UC2: Gestione dei dispositivi collegati
@@ -256,6 +222,70 @@ Di seguito viene presentata la lista degli attori dei casi d’uso:
     L'utente che interagisce con la dashboard.
 -   **Scopo e descrizione**:  
     L'utente interroga la dashboard per visualizzare le statistiche di sistema per conoscerne lo stato di salute e diagnosticare eventuali malfunzionamenti.
+
+
+## Requisiti
+
+Vengono ora presentati i requisiti emersi durante l’analisi dei casi d’uso. Lo studente ha deciso di inserire i requisiti in una tabella dei requisiti per permetterne una consultazione agevole.
+La tabella dei requisiti li presenta specificandone:
+-   **Identificativo** (secondo le regole indicate successivamente);
+-   **Categoria** di appartenenza fra:
+    -   **Obbligatorio**, per i requisiti irrinunciabili;
+    -   **Desiderabile**, per i requisiti non strettamente necessari ma che offrono un
+    valore aggiunto riconoscibile;
+    -   **Opzionale**, per i requisiti relativamente utili o contrattabili in seguito.
+-   **Descrizione** esaustiva del requisito;
+
+### Catalogazione requisiti
+I requisiti sono identificati come segue:
+
+<p align="center">R[Categoria][Tipo][numero]</p>
+
+Dove:
+-   `R` specifica che si tratta di un requisito;
+-   `Categoria` indica se si tratta di un requisito:
+    -   Obbligatorio: `M` (_mandatory_);
+    -   Desiderabile: `A` (_advisable_);
+    -   Opzionale: `O` (_optional_);
+-   `Tipo` indica la tipologia del requisito, che può essere:
+    -   Di vincolo: `O` (_obligation_);
+    -   Funzionale: `F` (_functional_);
+    -   Di qualità: `Q` (_quality_);
+-   `Numero` è assoluto e rappresenta un riferimento univoco al requisito in questione.
+
+
+### Tabella dei requisiti
+
+#### Tabella dei requisiti di vincolo
+
+| Identificativo | Categoria    | Descrizione                                                                                                     |
+|----------------|--------------|-----------------------------------------------------------------------------------------------------------------|
+| RMO1           | Obbligatorio | Il sistema deve essere progettato secondo lo stile di progettazione a microservizi.                             |
+| RAO2           | Desiderabile | Il sistema può essere implementato utilizzando il linguaggio JavaScript secondo lo standard EcmaScript 2016.    |
+| RAO3           | Desiderabile | Il sistema può essere implementato utilizzando il framework Node.JS per il _backend_ e React per il _frontend_. |
+| RM04           | Obbligatorio | Il sistema deve utilizzare il protocollo MQTT.                                                                  |
+
+#### Tabella dei requisiti funzionali
+
+| Identificativo | Categoria    | Descrizione                                                                                      |
+|----------------|--------------|--------------------------------------------------------------------------------------------------|
+| RMF1           | Obbligatorio | L'utente deve poter visualizzare tutti i dispositivi collegati al sistema.                       |
+| RMF2           | Obbligatorio | L'utente deve poter visualizzare i dispositivi collegati secondo dominio applicativo.            |
+| RAF3           | Desiderabile | L'utente può visualizzare i dispositivi collegati secondo gruppi personalizzati.                 |
+| RMF4           | Obbligatorio | L'utente deve poter selezionare uno dei dispositivi collegati per visualizzarne le informazioni. |
+| RAF5           | Desiderabile | L'utente può creare un gruppo di dispositivi. personalizzato                                     |
+| RAF6           | Desiderabile | L'utente può modificare uno dei gruppi personalizzati esistenti.                                 |
+| RAF7           | Desiderabile | L'utente può rimuovere uno dei gruppi di dispositivi personalizzati esistenti.                   |
+| RMF8           | Obbligatorio | L'utente deve poter visualizzare le operazioni messe a disposizione dal dispositivo selezionato. |
+| RMF9           | Obbligatorio | L'utente deve poter selezionare una delle operazioni disponibili.                                |
+| RMF10          | Obbligatorio | L'utente deve poter visualizzare le statistiche di utilizzo del sistema sistema.                 |
+
+#### Tabella dei requisiti di qualità
+
+| Identificativo | Categoria | Descrizione                                                                                                 |
+| -------------- | --------- | ----------------------------------------------------------------------------------------------------------- |
+| ROQ1           | Opzionale | Il sistema deve essere testato, raggiungendo i seguenti obiettivi: <ul><li>_statement coverage_ > 80 %</li><li>_branch coverage_ > 90 %</li> |
+
 
 
 
