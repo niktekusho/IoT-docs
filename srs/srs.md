@@ -390,7 +390,7 @@ Dove:
 | RMO1           | Obbligatorio | Il sistema deve essere progettato secondo lo stile di progettazione a microservizi.                             |
 | RAO2           | Desiderabile | Il sistema può essere implementato utilizzando il linguaggio JavaScript secondo lo standard EcmaScript 2016.    |
 | RAO3           | Desiderabile | Il sistema può essere implementato utilizzando il framework Node.JS per il _backend_ e React per il _frontend_. |
-| RM04           | Obbligatorio | Il sistema deve utilizzare il protocollo MQTT.                                                                  |
+| RMO4           | Obbligatorio | Il sistema deve utilizzare il protocollo MQTT.                                                                  |
 
 #### Tabella dei requisiti funzionali
 
@@ -414,7 +414,35 @@ Dove:
 | ROQ1           | Opzionale | Il sistema deve essere testato, raggiungendo i seguenti obiettivi: <ul><li>_statement coverage_ > 80 %</li><li>_branch coverage_ > 90 %</li> |
 
 
+#### Riepilogo dei requisiti
 
+| Tipo        | Obbligatorio | Opzionale | Desiderabile |
+| ----------- | ------------ | --------- | ------------ |
+| Funzionale  | 6            | 0         | 4            |
+| Qualitativo | 0            | 1         | 0            |
+| Di vincolo  | 2            | 0         | 2            |
+| Totale      | 8            | 1         | 6            |
+
+
+### Implementazione dei requisiti
+
+| Identificativo requisito | Categoria    | Implementazione |
+| ------------------------ | ------------ | --------------- |
+| RMF1                     | Obbligatorio |                 |
+| RMF2                     | Obbligatorio |                 |
+| RAF3                     | Desiderabile |                 |
+| RMF4                     | Obbligatorio |                 |
+| RAF5                     | Desiderabile |                 |
+| RAF6                     | Desiderabile |                 |
+| RAF7                     | Desiderabile |                 |
+| RAF8                     | Desiderabile |                 |
+| RAF9                     | Desiderabile |                 |
+| RMF10                    | Obbligatorio |                 |
+| ROQ1                     | Opzionale    |                 |
+| RMO1                     | Obbligatorio |                 |
+| RAO2                     | Desiderabile |                 |
+| RAO3                     | Desiderabile |                 |
+| RMO4                     | Obbligatorio |                 |
 
 # Note
 
