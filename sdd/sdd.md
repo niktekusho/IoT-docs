@@ -140,6 +140,23 @@ Visual Studio Code è un editor di testo sviluppato da Microsoft per la scrittur
     -   Non è molto personalizzabile e l'interfaccia predefinita è molto scarna.
 
 
+## Design Pattern
+
+I Design Pattern descrivono la metodologia con cui affrontare problemi ricorrenti, fornendo soluzioni standard condivise.
+La conoscenza dei Design Pattern favorisce la progettazione, il riuso e la manutenibilità del codice prodotto.
+I principali Design Pattern vengono suddivisi in quattro categorie:
+-   Architetturali: affrontano il problema di progettazione di un sistema software fornendo uno schema di partenza su cui basare l’architettura;
+-   Creazionali: affrontano il problema di astrarre il sistema rendendolo indipendente dall’implementazione concreta delle sue componenti;
+-   Strutturali: affrontano il problema riguardante la composizione delle classi e degli oggetti, sfruttando l’ereditarietà e l’aggregazione;
+-   Comportamentali: affrontano il problema dell’interazione tra le componenti, definendo la funzione degli oggetti e il modo in cui interagiscono gli uni con gli altri.
+
+### Stile Architetturale: microservizi
+
+Lo stile architetturale a microservizi descrive un metodo di progettazione delle applicazioni come **insiemi di servizi eseguibili indipendentemente**, **che comunicano tra loro grazie a meccanismi di comunicazione leggeri**.
+
+![Panoramica sull'architettura software](./images/arch-overview.png)
+
+
 # Note
 
 <a name="1">1:</a> Un _Design Pattern_ è una soluzione progettuale ad un problema ricorrente e opportunamente generalizzato, risultando così applicabile in altri contesti.
