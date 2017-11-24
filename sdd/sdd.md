@@ -22,16 +22,18 @@ Lo stage prevede lo sviluppo e la realizzazione di una dashboard per la gestione
 In questa sezione sono descritte le tecnologie che verranno utilizzate per lo sviluppo del progetto, includendo la motivazione che ha portato lo studente a sceglierle.
 Gli strumenti di sviluppo che verranno impiegati sono inclusi in questa sezione.
 
-| Tecnologia      | Sommario                                                                                                                                    |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Node.js         | Node.js è un'ambiente d'esecuzione utilizzato per l'implementazione di applicazioni server in JavaScript.                                   |
-| React           | React è una libreria per il linguaggio JavaScript il cui scopo è costruire interfacce utente.                                               |
-| EcmaScript 2017 | EcmaScript è un linguaggio di programmazione la cui implementazione standard più conosciuta è JavaScript.                                    |
-| Jest            | Jest è un framework per l'implementazione di test per codice JavaScript.                                                                    |
-| ESLint          | ESLint è uno strumento open-source per l'analisi statica del codice JavaScript prodotto.                                                    |
-| HTML5           | HTML5 è un linguaggio di markup per la formattazione e impaginazione delle pagine Web pubblicato come W3C Recommendation dall'ottobre 2014. |
-| CSS3            | CSS3 è un linguaggio di formattazione delle pagine Web.                                                                                     |
-| Atom                | Atom è un editor di testo sviluppato da GitHub con tecnologie moderne e personalizzabile.                                                                                                                                             |
+| Tecnologia         | Sommario                                                                                                                                    |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Node.js            | Node.js è un'ambiente d'esecuzione utilizzato per l'implementazione di applicazioni server in JavaScript.                                   |
+| React              | React è una libreria per il linguaggio JavaScript il cui scopo è costruire interfacce utente.                                               |
+| EcmaScript 2017    | EcmaScript è un linguaggio di programmazione la cui implementazione standard più conosciuta è JavaScript.                                   |
+| Jest               | Jest è un framework per l'implementazione di test per codice JavaScript.                                                                    |
+| ESLint             | ESLint è uno strumento open-source per l'analisi statica del codice JavaScript prodotto.                                                    |
+| HTML5              | HTML5 è un linguaggio di markup per la formattazione e impaginazione delle pagine Web pubblicato come W3C Recommendation dall'ottobre 2014. |
+| CSS3               | CSS3 è un linguaggio di formattazione delle pagine Web.                                                                                     |
+| Atom               | Atom è un editor di testo sviluppato da GitHub con tecnologie moderne e personalizzabile.                                                   |
+| Visual Studio Code | Visual Studio Code è un editor di testo sviluppato da Microsoft specificatamente per i linguaggi del Web.                                   |
+
 
 ### Node.js
 
@@ -80,6 +82,62 @@ L'edizione 2017 dello standard porta in dote le seguenti funzionalità:
     -   Il supporto alla nuova edizione dello standard è presente in maniera completa solamente nelle ultime versioni dei browser e di Node.js.<sub>[fonti](#fonte)</sub>
 
 
+### Jest
+
+Jest è un framework per l'implementazione di test per codice JavaScript scritto da Facebook.
+
+-   Aspetti positivi:
+    -   Jest non richiede una configurazione, utilizzando impostazioni predefinite ottimali.
+    -   Jest è una piattaforma di test completa che include strumenti di validazione dei risultati e  strumenti per il mocking.
+    -   Jest comprende funzionalità per i test di regressione dei componenti scritti in React.
+    -   Jest per default esegue i test parallelamente, velocizzando i processi di test.
+-   Aspetti negativi:
+    -   Jest è meno flessibile nel suo utilizzo rispetto ad altre librerie di test, quali ad esempio Mocha.
+
+### ESLint
+
+ESLint è uno strumento che esegue analisi del codice sorgente scritto in JavaScript alla ricerca di bug noti, di inconsistenze di stile nella scrittura del codice e mira a mantenere il codice facilmente leggibile e manutenibile.
+
+-   Aspetti positivi:
+    -   ESLint è altamente configurabile, permettendo la definizione di regole condivise più appropriate per il proprio progetto.
+    -   Supporta numerose tecnologie per mezzo di plugin ed è supportato da molti strumenti di sviluppo.
+    -   Le regole di analisi sono ben documentate, con esempi sul loro utilizzo, e gli errori emessi sono ben leggibili.
+-   Aspetti negativi:
+    -   ESLint richiede una configurazione iniziale per iniziare a utilizzarlo.
+
+
+### HTML5 & CSS3
+
+HTML5 e CSS3 sono le ultime revisioni stabili rispettivamente del linguaggio HTML e del linguaggio CSS rilasciate dalla W3C.
+
+-   Aspetti positivi:
+    -   HTML5 ha il vantaggio di utilizzare una sintassi semplificata e più chiara rispetto alle versioni precedenti dello standard e permette l’integrazione con diversi formati multimediali senza utilizzare plugin esterni.
+    -   HTML5 e CSS3 sono ben diffusi e tutti i browser più recenti li supportano anche in caso di versioni non aggiornate.
+    -   HTML5 e CSS3 sono ben documentati e sono disponibili nella rete numerose risorse per il loro utilizzo ottimale.
+-   Aspetti negativi: Nessuno.
+
+
+### Atom
+
+Atom è un editor di testo sviluppato da GitHub che può essere utilizzaato come un IDE (Integrated Development Environment).
+
+-   Aspetti positivi:
+    -   Atom è estremamente espandibile e personalizzabile, permettendo di creare un ambiente di sviluppo su misura.
+    -   Atom riconosce la sintassi di moltissimi linguaggi attraverso moduli installabili.
+-   Aspetti negativi:
+    -   Atom richiede un utilizzo della CPU elevato che ne mina la stabilità generale.
+    -   Atom non si interfaccia nativamente con strumenti di debug del codice.
+
+
+### Visual Studio Code
+
+Visual Studio Code è un editor di testo sviluppato da Microsoft per la scrittura di applicazioni Web.
+
+-   Aspetti positivi:
+    -   É molto efficiente nell'utilizzo di risorse, risultando uno strumento affidabile.
+    -   É dotato di supporto nativo per strumenti di debug
+-   Aspetti negativi:
+    -   Non è molto personalizzabile e l'interfaccia predefinita è molto scarna.
 
 
 # Note
