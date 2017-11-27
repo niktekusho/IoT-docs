@@ -140,6 +140,47 @@ Visual Studio Code è un editor di testo sviluppato da Microsoft per la scrittur
     -   Non è molto personalizzabile e l'interfaccia predefinita è molto scarna.
 
 
+## Architettura
+
+
+L'architettura scelta per il sistema segue lo stile architetturale a microservizi. descrive un metodo di progettazione delle applicazioni come **insiemi di servizi eseguibili indipendentemente**, **che comunicano tra loro grazie a meccanismi di comunicazione leggeri**.
+
+![Panoramica sull'architettura software](./images/arch-overview.png)
+
+### Servizio: MQTT Broker
+
+Il broker MQTT è il servizio resonsabile alla ricezione di tutti i messaggi, alla loro catalogazione e all'invio delle notifiche verso i client sottoscritti a quella categoria.
+Il broker memorizza lo stato di tutti i client a lui connessi, inclusi i messaggi non ancora inviati o il cui invio è fallito.
+
+### Servizio: termometro _virtualizzato_
+
+Questo servizio simula la presenza di un sensore che invii dati sulla temperatura dell'ambiente in cui si trova.
+Esso pubblica periodicamente la temperatura rilevata secondo l'argomento `temperature`, in congiunzione con i propri dati identificativi, quali produttore, modello e revisione.
+Anche se nel diagramma è disegnato individualmente, è possibile che ve ne siano molteplici.
+
+### Servizio: temperatura
+
+Questo servizio si occupa di raccogliere tutti i dati provenienti dai sensori di temperatura, memorizzandoli e mettendoli a disposizione in un formato strutturato per gli altri servizi del sistema.
+Il servizio si sottoscrive alla categoria `temperature`.
+Anche se nel diagramma è disegnato individualmente, è possibile che ve ne siano molteplici.
+
+
+### Servizio: lampada _virtualizzata_
+
+Questo servizio simula la presenza di un dispositivo _attivo_.
+La lista delle operazioni disponibili è la seguente:
+
+1.  accensione della lampada;
+2.  spegnimento della lampada;
+3.  richiesta assorbimento energetico;
+4.  richiesta tempo di vita stimato della lampada.
+
+L'argomento a cui la lampada si sottoscrive è `light/active`, in quanto capace di rispondere a richieste più complesse. Al primo collegamento il dispositivo invia i propri dati identificativi, pubblicandoli nella categoria `hw_info`.
+
+### Servizio: illuminazione
+
+Questo servizio si occupa di raccogliere tutti i dati pubblicati dai dispositivi nella categoria `light` e permette il controllo dei dispositivi che scambiano dati nella categoria `light/active`.
+
 ## Design Pattern
 
 I Design Pattern descrivono la metodologia con cui affrontare problemi ricorrenti, fornendo soluzioni standard condivise.
@@ -150,11 +191,6 @@ I principali Design Pattern vengono suddivisi in quattro categorie:
 -   Strutturali: affrontano il problema riguardante la composizione delle classi e degli oggetti, sfruttando l’ereditarietà e l’aggregazione;
 -   Comportamentali: affrontano il problema dell’interazione tra le componenti, definendo la funzione degli oggetti e il modo in cui interagiscono gli uni con gli altri.
 
-### Stile Architetturale: microservizi
-
-Lo stile architetturale a microservizi descrive un metodo di progettazione delle applicazioni come **insiemi di servizi eseguibili indipendentemente**, **che comunicano tra loro grazie a meccanismi di comunicazione leggeri**.
-
-![Panoramica sull'architettura software](./images/arch-overview.png)
 
 
 # Note
