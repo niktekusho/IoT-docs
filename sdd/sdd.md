@@ -143,37 +143,41 @@ Visual Studio Code è un editor di testo sviluppato da Microsoft per la scrittur
 ## Architettura
 
 
-L'architettura scelta per il sistema segue lo stile architetturale a microservizi. descrive un metodo di progettazione delle applicazioni come **insiemi di servizi eseguibili indipendentemente**, **che comunicano tra loro grazie a meccanismi di comunicazione leggeri**.
+L'architettura scelta per il sistema segue lo stile architetturale a microservizi con l'obiettivi di approfondire questo stile architetturale e implementarlo in uno scenario plausibile.
+Lo stile architetturale a microservizi descrive un metodo di progettazione delle applicazioni come **insiemi di servizi eseguibili indipendentemente**, **che comunicano tra loro grazie a meccanismi di comunicazione leggeri**.
 
 ![Panoramica sull'architettura software](./images/arch-overview.png)
 
 ### Servizio: MQTT Broker
 
-Il broker MQTT è il servizio resonsabile alla ricezione di tutti i messaggi, alla loro catalogazione e all'invio delle notifiche verso i client sottoscritti a quella categoria.
+Il broker MQTT è il servizio resonsabile alla ricezione di tutti i messaggi, alla loro catalogazione e all'invio delle notifiche verso i client sottoscritti a ciascuna categoria.
 Il broker memorizza lo stato di tutti i client a lui connessi, inclusi i messaggi non ancora inviati o il cui invio è fallito.
 
 ### Servizio: termometro _virtualizzato_
 
 Questo servizio simula la presenza di un sensore che invii dati sulla temperatura dell'ambiente in cui si trova.
-Esso pubblica periodicamente la temperatura rilevata secondo l'argomento `temperature` e secondo l'argomento `hw_info` i propri dati identificativi, quali produttore, modello e revisione.
+
+Esso pubblica periodicamente la temperatura rilevata secondo l'argomento `temperature` e secondo l'argomento `hw_info` i propri dati identificativi, quali produttore, modello, ecc.
+
+Data la relativa importanza i dati vengono inviati con un QoS di livello 0 nella categoria `temperature`, mentre con QoS di livello 1 nella categoria `hw_info`.
+
 Anche se nel diagramma è disegnato individualmente, è possibile che ve ne siano molteplici.
 
 ### Servizio: temperatura
 
 Questo servizio si occupa di raccogliere tutti i dati provenienti dai sensori di temperatura, memorizzandoli e mettendoli a disposizione in un formato strutturato per gli altri servizi del sistema.
-Il servizio si sottoscrive alla categoria `temperature`.
-Anche se nel diagramma è disegnato individualmente, è possibile che ve ne siano molteplici.
 
+Il servizio si sottoscrive alla categoria `temperature` e comunica con un QoS di livello 0.
 
 ### Servizio: lampada _virtualizzata_
 
-Questo servizio simula la presenza di un dispositivo _attivo_.
+Questo servizio simula la presenza di un dispositivo _attivo_: una lampada in grado di comunicare il proprio assorbimento energetico e la sua durata stimata.
 La lista delle operazioni disponibili è la seguente:
 
-1.  accensione della lampada;
-2.  spegnimento della lampada;
-3.  richiesta assorbimento energetico;
-4.  richiesta tempo di vita stimato della lampada.
+1.  accensione della lampada (QoS di livello 1);
+2.  spegnimento della lampada (QoS di livello 1);
+3.  richiesta assorbimento energetico (QoS di livello 0);
+4.  richiesta tempo di vita stimato della lampada (QoS di livello 0).
 
 L'argomento a cui la lampada si sottoscrive è `light/active`, in quanto capace di rispondere a richieste più complesse. Al primo collegamento il dispositivo invia i propri dati identificativi, pubblicandoli nella categoria `hw_info`.
 
@@ -181,22 +185,35 @@ L'argomento a cui la lampada si sottoscrive è `light/active`, in quanto capace 
 
 Questo servizio si occupa di raccogliere e memorizzare tutti i dati pubblicati dai dispositivi nella categoria `light` e permette il controllo dei dispositivi sottoscritti alla categoria `light/active`.
 
+Questo servizio utilizza sia QoS di livello 0 che di livello 1.
+
 ### Servizio: informazioni dispositivo
 
-Questo servizio si occupa di raccogliere e memorizzare tutti i dati pubblicati secondo l'argomento `hw_info`, mettendoli a disposizione degli servizi interessati.
+Questo servizio si occupa di raccogliere e memorizzare tutti i dati pubblicati secondo l'argomento `hw_info`, mettendoli a disposizione degli altri servizi interessati.
+
+Il servizio utilizza esclusivamente un livello di QoS pari a 1 per aumentare l'affidabilità del sistema a fronte delle attività di identificazione dei dispositivi collegati.
 
 ### Servizio: preferenze utente
 
 Questo servizio si occupa di salvare le preferenze utente, quali ad esempio gruppi personalizzati, unità di misura preferite, ecc.
+
 Il servizio risponde ai messaggi pubblicati nella categoria `user_pref`.
+
+Il servizio utilizza un livello di QoS pari a 0 per le richieste di lettura delle preferenze, mentre le richieste di modifica o scrittura delle preferenze sono gestite con un livello di QoS pari a 1.
 
 ### Servizio: API
 
-Questo servizio svolge un ruolo da intermediario tra il servizio che fornisce l'applicazione web e il broker MQTT. Esso interroga tutti i _topic_ definiti dal sistema per fornire una interfaccia sincrona e asincrona ai dati.
+Questo servizio svolge un ruolo da intermediario tra il servizio che fornisce l'applicazione web e il broker MQTT.
+
+Esso interroga tutti i _topic_ definiti dal sistema per fornire una interfaccia sincrona e asincrona ai dati.
+
+L'interfaccia sincrona consiste in un'interfaccia che risponde ai metodi HTTP, mentre l'interfaccia asincrona richiede l'istituzione di una connessione che utilizzi i WebSocket.
 
 ### Servizio: web app
 
-Questo servizio comprende l'applicazione web per la consultazione del sistema per mezzo dei browser. Richiede i dati direttamente al servizio **API**.
+Questo servizio comprende l'applicazione web per la consultazione del sistema per mezzo dei browser.
+
+Richiede i dati direttamente al servizio **API**, in particolare presentando i dati ottenuti in tempo reale con l'interfaccia asincrona del servizio **API**.
 
 ## Design Pattern
 
