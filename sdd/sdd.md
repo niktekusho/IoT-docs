@@ -155,7 +155,7 @@ Il broker memorizza lo stato di tutti i client a lui connessi, inclusi i messagg
 ### Servizio: termometro _virtualizzato_
 
 Questo servizio simula la presenza di un sensore che invii dati sulla temperatura dell'ambiente in cui si trova.
-Esso pubblica periodicamente la temperatura rilevata secondo l'argomento `temperature`, in congiunzione con i propri dati identificativi, quali produttore, modello e revisione.
+Esso pubblica periodicamente la temperatura rilevata secondo l'argomento `temperature` e secondo l'argomento `hw_info` i propri dati identificativi, quali produttore, modello e revisione.
 Anche se nel diagramma è disegnato individualmente, è possibile che ve ne siano molteplici.
 
 ### Servizio: temperatura
@@ -179,7 +179,24 @@ L'argomento a cui la lampada si sottoscrive è `light/active`, in quanto capace 
 
 ### Servizio: illuminazione
 
-Questo servizio si occupa di raccogliere tutti i dati pubblicati dai dispositivi nella categoria `light` e permette il controllo dei dispositivi che scambiano dati nella categoria `light/active`.
+Questo servizio si occupa di raccogliere e memorizzare tutti i dati pubblicati dai dispositivi nella categoria `light` e permette il controllo dei dispositivi sottoscritti alla categoria `light/active`.
+
+### Servizio: informazioni dispositivo
+
+Questo servizio si occupa di raccogliere e memorizzare tutti i dati pubblicati secondo l'argomento `hw_info`, mettendoli a disposizione degli servizi interessati.
+
+### Servizio: preferenze utente
+
+Questo servizio si occupa di salvare le preferenze utente, quali ad esempio gruppi personalizzati, unità di misura preferite, ecc.
+Il servizio risponde ai messaggi pubblicati nella categoria `user_pref`.
+
+### Servizio: API
+
+Questo servizio svolge un ruolo da intermediario tra il servizio che fornisce l'applicazione web e il broker MQTT. Esso interroga tutti i _topic_ definiti dal sistema per fornire una interfaccia sincrona e asincrona ai dati.
+
+### Servizio: web app
+
+Questo servizio comprende l'applicazione web per la consultazione del sistema per mezzo dei browser. Richiede i dati direttamente al servizio **API**.
 
 ## Design Pattern
 
