@@ -183,6 +183,18 @@ Questo servizio si occupa di raccogliere tutti i dati provenienti dai sensori di
 
 Il servizio si sottoscrive alla categoria `temperature` e comunica con un QoS di livello 0, inoltre può pubblicare messaggi con la sottocategoria `temperature/active` per usufruire delle funzionalità aggiuntive presenti in dispositivi attivi legati alla temperatura.
 
+#### Servizio: temperatura - Panoramica delle classi
+
+![Panoramica delle classi del servizio legato al controllo temperatura](./images/temperature_service_classes.png)
+
+Classe            | Funzionalità
+------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`ServiceManager`  | Classe responsabile dell'integrazione tra ricezione dei dati di temperatura, gestione della persistenza dei dati ed esposizione di una interfaccia per gli altri servizi.
+`MQTTClient`      | Classe utile all'inizializzazione del client MQTT.
+`DBClient`        | Classe utile all'inizializzazione del client per il database del servizio.
+`API`             | Classe che rappresenta le funzionalità esposte all'esterno dal servizio.
+`TemperatureData` | Classe che rappresenta i dati ricevuti dai dispositivi attraverso il protocollo MQTT.
+
 ### Servizio: lampada _virtualizzata_
 
 Questo servizio simula la presenza di un dispositivo _attivo_: una lampada in grado di comunicare il proprio assorbimento energetico e la sua durata stimata.
