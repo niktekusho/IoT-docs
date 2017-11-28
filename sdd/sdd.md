@@ -163,6 +163,20 @@ Data la relativa importanza i dati vengono inviati con un QoS di livello 0 nella
 
 Anche se nel diagramma è disegnato individualmente, è possibile che ve ne siano molteplici.
 
+#### Servizio: termometro _virtualizzato_ - Panoramica delle classi
+
+![Panoramica delle classi del servizio](./images/virtual_temp_sensor_classes.png)
+
+Classe|Funzionalità
+------|------------
+`DeviceInfo`      | Classe i cui oggetti rappresentano le informazioni del dispositivo, quali produttore, modello, revisione e ecc. Questi dati vengono pubblicati nel topic `hw_info`.
+`ServiceManager`      | Classe responsabile dell'integrazione tra generazione dei dati di temperatura, gestione delle informazioni del dispositivo e invio delle informazioni tramite protocollo MQTT.
+`MQTTClient`      | Classe utile all'inizializzazione del client MQTT.
+`TemperatureCurveFactory`      | Classe Factory astratta che espone la funzionalità di creazione della curva di temperatura, rappresentata dalla classe `TemperatureCurve`.
+`SineTemperatureCurveFactory`      | Implementazione della factory `TemperatureCurveFactory` per la creazione di oggetti `SineTemperatureCurve`.
+`TemperatureCurve`      | Classe astratta che espone le funzionalità di inizializzazione della funzione, di aggiunta di rumore pseudocasuale nella funzione creata e di simulazione della temperatura data l'ora corrente.
+`SineTemperatureCurve`      | Classe che implementa `TemperatureCurve` definendo una funzione di simulazione sinusoidale, in cui i parametri modificabili sono ampiezza, frequenza e fase.
+
 ### Servizio: temperatura
 
 Questo servizio si occupa di raccogliere tutti i dati provenienti dai sensori di temperatura, memorizzandoli e mettendoli a disposizione in un formato strutturato per gli altri servizi del sistema.
@@ -224,8 +238,6 @@ I principali Design Pattern vengono suddivisi in quattro categorie:
 -   Creazionali: affrontano il problema di astrarre il sistema rendendolo indipendente dall’implementazione concreta delle sue componenti;
 -   Strutturali: affrontano il problema riguardante la composizione delle classi e degli oggetti, sfruttando l’ereditarietà e l’aggregazione;
 -   Comportamentali: affrontano il problema dell’interazione tra le componenti, definendo la funzione degli oggetti e il modo in cui interagiscono gli uni con gli altri.
-
-
 
 # Note
 
