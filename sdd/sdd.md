@@ -169,7 +169,7 @@ Anche se nel diagramma è disegnato individualmente, è possibile che ve ne sian
 
 Classe|Funzionalità
 ------|------------
-`DeviceInfo`      | Classe i cui oggetti rappresentano le informazioni del dispositivo, quali produttore, modello, revisione e ecc. Questi dati vengono pubblicati nel topic `hw_info`.
+`DeviceInfo`      | Classe i cui oggetti rappresentano le informazioni del dispositivo, quali produttore, modello, revisione, ecc. Questi dati vengono pubblicati nel topic `hw_info`.
 `ServiceManager`      | Classe responsabile dell'integrazione tra generazione dei dati di temperatura, gestione delle informazioni del dispositivo e invio delle informazioni tramite protocollo MQTT.
 `MQTTClient`      | Classe utile all'inizializzazione del client MQTT.
 `TemperatureCurveFactory`      | Classe Factory astratta che espone la funzionalità di creazione della curva di temperatura, rappresentata dalla classe `TemperatureCurve`.
