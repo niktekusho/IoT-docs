@@ -165,23 +165,23 @@ Anche se nel diagramma è disegnato individualmente, è possibile che ve ne sian
 
 #### Servizio: termometro _virtualizzato_ - Panoramica delle classi
 
-![Panoramica delle classi del servizio](./images/virtual_temp_sensor_classes.png)
+![Panoramica delle classi del servizio di simulazione di un  termometro](./images/virtual_temp_sensor_classes.png)
 
-Classe|Funzionalità
-------|------------
-`DeviceInfo`      | Classe i cui oggetti rappresentano le informazioni del dispositivo, quali produttore, modello, revisione, ecc. Questi dati vengono pubblicati nel topic `hw_info`.
-`ServiceManager`      | Classe responsabile dell'integrazione tra generazione dei dati di temperatura, gestione delle informazioni del dispositivo e invio delle informazioni tramite protocollo MQTT.
-`MQTTClient`      | Classe utile all'inizializzazione del client MQTT.
-`TemperatureCurveFactory`      | Classe Factory astratta che espone la funzionalità di creazione della curva di temperatura, rappresentata dalla classe `TemperatureCurve`.
-`SineTemperatureCurveFactory`      | Implementazione della factory `TemperatureCurveFactory` per la creazione di oggetti `SineTemperatureCurve`.
-`TemperatureCurve`      | Classe astratta che espone le funzionalità di inizializzazione della funzione, di aggiunta di rumore pseudocasuale nella funzione creata e di simulazione della temperatura data l'ora corrente.
-`SineTemperatureCurve`      | Classe che implementa `TemperatureCurve` definendo una funzione di simulazione sinusoidale, in cui i parametri modificabili sono ampiezza, frequenza e fase.
+Classe                        | Funzionalità
+------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`DeviceInfo`                  | Classe i cui oggetti rappresentano le informazioni del dispositivo, quali produttore, modello, revisione, ecc. Questi dati vengono pubblicati nel topic `hw_info`.
+`ServiceManager`              | Classe responsabile dell'integrazione tra generazione dei dati di temperatura, gestione delle informazioni del dispositivo e invio delle informazioni tramite protocollo MQTT.
+`MQTTClient`                  | Classe utile all'inizializzazione del client MQTT.
+`TemperatureCurveFactory`     | Classe Factory astratta che espone la funzionalità di creazione della curva di temperatura, rappresentata dalla classe `TemperatureCurve`.
+`SineTemperatureCurveFactory` | Implementazione della factory `TemperatureCurveFactory` per la creazione di oggetti `SineTemperatureCurve`.
+`TemperatureCurve`            | Classe astratta che espone le funzionalità di inizializzazione della funzione, di aggiunta di rumore pseudocasuale nella funzione creata e di simulazione della temperatura data l'ora corrente.
+`SineTemperatureCurve`        | Classe che implementa `TemperatureCurve` definendo una funzione di simulazione sinusoidale, in cui i parametri modificabili sono ampiezza, frequenza e fase.
 
 ### Servizio: temperatura
 
 Questo servizio si occupa di raccogliere tutti i dati provenienti dai sensori di temperatura, memorizzandoli e mettendoli a disposizione in un formato strutturato per gli altri servizi del sistema.
 
-Il servizio si sottoscrive alla categoria `temperature` e comunica con un QoS di livello 0.
+Il servizio si sottoscrive alla categoria `temperature` e comunica con un QoS di livello 0, inoltre può pubblicare messaggi con la sottocategoria `temperature/active` per usufruire delle funzionalità aggiuntive presenti in dispositivi attivi legati alla temperatura.
 
 ### Servizio: lampada _virtualizzata_
 
@@ -195,6 +195,17 @@ La lista delle operazioni disponibili è la seguente:
 
 L'argomento a cui la lampada si sottoscrive è `light/active`, in quanto capace di rispondere a richieste più complesse. Al primo collegamento il dispositivo invia i propri dati identificativi, pubblicandoli nella categoria `hw_info`.
 
+#### Servizio: lampada _virtualizzata_ - Panoramica delle classi
+
+![Panoramica delle classi del servizio di simulazione di una  lampada](./images/virtual_lamp_classes.png)
+
+Classe           | Funzionalità
+-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`DeviceInfo`     | Classe i cui oggetti rappresentano le informazioni del dispositivo, quali produttore, modello, revisione, ecc. Questi dati vengono pubblicati nel topic `hw_info`.
+`ServiceManager` | Classe responsabile dell'integrazione tra stato della lampada e invio delle informazioni tramite protocollo MQTT.
+`MQTTClient`     | Classe utile all'inizializzazione del client MQTT.
+`Lamp`           | Classe che utilizza il Design Pattern Singleton per fornire lo stato della lampada (on/off).
+
 ### Servizio: illuminazione
 
 Questo servizio si occupa di raccogliere e memorizzare tutti i dati pubblicati dai dispositivi nella categoria `light` e permette il controllo dei dispositivi sottoscritti alla categoria `light/active`.
@@ -203,7 +214,7 @@ Questo servizio utilizza sia QoS di livello 0 che di livello 1.
 
 ### Servizio: informazioni dispositivo
 
-Questo servizio si occupa di raccogliere e memorizzare tutti i dati pubblicati secondo l'argomento `hw_info`, mettendoli a disposizione degli altri servizi interessati.
+Questo servizio si occupa di raccogliere e memorizzare tutti i dati pubblicati secondo l'argomento `hw_info`.
 
 Il servizio utilizza esclusivamente un livello di QoS pari a 1 per aumentare l'affidabilità del sistema a fronte delle attività di identificazione dei dispositivi collegati.
 
@@ -211,15 +222,13 @@ Il servizio utilizza esclusivamente un livello di QoS pari a 1 per aumentare l'a
 
 Questo servizio si occupa di salvare le preferenze utente, quali ad esempio gruppi personalizzati, unità di misura preferite, ecc.
 
-Il servizio risponde ai messaggi pubblicati nella categoria `user_pref`.
-
-Il servizio utilizza un livello di QoS pari a 0 per le richieste di lettura delle preferenze, mentre le richieste di modifica o scrittura delle preferenze sono gestite con un livello di QoS pari a 1.
+Il servizio non utilizza il protocollo MQTT, bensì viene utilizzato solamente dal servizio **API**.
 
 ### Servizio: API
 
 Questo servizio svolge un ruolo da intermediario tra il servizio che fornisce l'applicazione web e il broker MQTT.
 
-Esso interroga tutti i _topic_ definiti dal sistema per fornire una interfaccia sincrona e asincrona ai dati.
+Esso interroga i servizi **illuminazione**, **temperatura** e **informazioni dispositivo**  definiti dal sistema per fornire una interfaccia unificata ai dati, sia in maniera sincrona sia in maniera asincrona.
 
 L'interfaccia sincrona consiste in un'interfaccia che risponde ai metodi HTTP, mentre l'interfaccia asincrona richiede l'istituzione di una connessione che utilizzi i WebSocket.
 
