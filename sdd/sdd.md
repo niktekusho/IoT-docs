@@ -264,6 +264,19 @@ Questo servizio si occupa di salvare le preferenze utente, quali ad esempio grup
 
 Il servizio non utilizza il protocollo MQTT, bensì viene utilizzato solamente dal servizio **API**.
 
+#### Servizio: preferenze utente - Panoramica delle classi
+
+![Panoramica delle classi del servizio di trattamento delle preferenze utente](./images/userpreference_service_classes.png)
+
+Classe                            | Funzionalità
+----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`ServiceManager`                  | Classe responsabile della gestione della persistenza delle preferenze utente e dell'esposizione di una interfaccia per gli altri servizi.
+`DBClient`                        | Classe utile all'inizializzazione del client per il database del servizio.
+`API`                             | Classe che rappresenta le funzionalità esposte all'esterno dal servizio, permettendo di richiedere e modificare le preferenze dell'utente.
+`UserData`                      | Classe che rappresenta le informazioni di base dell'utente (nome, cognome, ecc.).
+`SystemUnitDefinition`          | Classe che contiene la lista delle unità di misura scelte dall'utente per ogni metrica.
+`UnitsConverter` | Classe che espone la funzionalità di conversione unità di misura.
+
 ### Servizio: API
 
 Questo servizio svolge un ruolo da intermediario tra il servizio che fornisce l'applicazione web e il broker MQTT.
@@ -271,6 +284,20 @@ Questo servizio svolge un ruolo da intermediario tra il servizio che fornisce l'
 Esso interroga i servizi **illuminazione**, **temperatura** e **informazioni dispositivo**  definiti dal sistema per fornire una interfaccia unificata ai dati, sia in maniera sincrona sia in maniera asincrona.
 
 L'interfaccia sincrona consiste in un'interfaccia che risponde ai metodi HTTP, mentre l'interfaccia asincrona richiede l'istituzione di una connessione che utilizzi i WebSocket.
+
+#### Servizio: API - Panoramica delle classi
+
+![Panoramica delle classi del servizio di gateway delle API](./images/api_service_classes.png)
+
+Classe             | Funzionalità
+-------------------|-----------------------------------------------------------------------------------------------------------------------------------------
+`ServiceManager`   | Classe responsabile dell'integrazione tra istanza del server e interfaccia ai dati esposta.
+`Server`           | Classe responsabile del ciclo di vita del server Node.js.
+`Route`            | Interfaccia che mette espone i metodi e le proprietà necessarie alla creazione degli endpoint dati.
+`UserRoute`        | Implementazione di `Route` che rappresenta gli endpoint per la gestione dell'utente.
+`DevicesRoute`     | Implementazione di `Route` che rappresenta gli endpoint messi a disposizione per la ricerca e identificazione dei dispositivi collegati.
+`TemperatureRoute` | Implementazione di `Route` che espone le funzionalità di gestione della temperatura.
+`LightRoute`       | Implementazione di `Route` che espone le funzionalità di gestione dell'illuminazione.
 
 ### Servizio: web app
 
