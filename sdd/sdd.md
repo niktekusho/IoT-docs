@@ -224,11 +224,39 @@ Questo servizio si occupa di raccogliere e memorizzare tutti i dati pubblicati d
 
 Questo servizio utilizza sia QoS di livello 0 che di livello 1.
 
+#### Servizio: illuminazione - Panoramica delle classi
+
+![Panoramica delle classi del servizio legato all'illuminazione](./images/light_service_classes.png)
+
+Classe                  | Funzionalità
+------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`ServiceManager`        | Classe responsabile dell'integrazione tra ricezione dei dati dei dispositivi di illuminazione, gestione della persistenza dei dati ed esposizione di una interfaccia per gli altri servizi.
+`MQTTClient`            | Classe utile all'inizializzazione del client MQTT.
+`DBClient`              | Classe utile all'inizializzazione del client per il database del servizio.
+`API`                   | Classe che rappresenta le funzionalità esposte all'esterno dal servizio. Include anche l'interfaccia di controllo dei dispositivi di illuminazione "_attivi_".
+`LightData`             | Classe che rappresenta i dati ricevuti dai dispositivi attraverso il protocollo MQTT.
+`RGBLightDataDecorator` | Classe che aggiunge informazioni relative alla temperatura colore della luce emessa dal dispositivo.
+`LightController`       | Classe che permette di controllare i dispositivi collegati, preparando i pacchetti che la classe `API` può inviare ai dispositivi secondo l'interfaccia definita dal produttore.
+
 ### Servizio: informazioni dispositivo
 
 Questo servizio si occupa di raccogliere e memorizzare tutti i dati pubblicati secondo l'argomento `hw_info`.
 
 Il servizio utilizza esclusivamente un livello di QoS pari a 1 per aumentare l'affidabilità del sistema a fronte delle attività di identificazione dei dispositivi collegati.
+
+#### Servizio: informazioni dispositivo - Panoramica delle classi
+
+![Panoramica delle classi del servizio legato alle informazioni dei dispositivi](./images/devicesinfo_service_classes.png)
+
+Classe                            | Funzionalità
+----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`ServiceManager`                  | Classe responsabile dell'integrazione tra ricezione dei dati dei dispositivi, gestione della persistenza dei dati ed esposizione di una interfaccia per gli altri servizi.
+`MQTTClient`                      | Classe utile all'inizializzazione del client MQTT.
+`DBClient`                        | Classe utile all'inizializzazione del client per il database del servizio.
+`API`                             | Classe che rappresenta le funzionalità esposte all'esterno dal servizio, permettendo di richiedere i dati dei dispositivi e fornire la specifica dei dati inviati dai dispositivi.
+`DeviceInfo`                      | Classe che rappresenta le informazioni di base ricevute dai dispositivi attraverso il protocollo MQTT.
+`ActiveDeviceOperations`          | Classe che contiene la lista delle operazioni messe a disposizione dai dispositivi "_attivi_".
+`ActiveDeviceOperationDescriptor` | Classe che contiene le specifiche della funzionalità messa a disposizione dal dispositivo.
 
 ### Servizio: preferenze utente
 
