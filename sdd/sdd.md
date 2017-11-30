@@ -305,6 +305,24 @@ Questo servizio comprende l'applicazione web per la consultazione del sistema pe
 
 Richiede i dati direttamente al servizio **API**, in particolare presentando i dati ottenuti in tempo reale con l'interfaccia asincrona del servizio **API**.
 
+#### Servizio: web app - Panoramica delle classi
+
+![Panoramica delle classi del servizio web app](./images/web_service_classes.png)
+
+Classe               | Funzionalità
+---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`ServiceManager`     | Classe responsabile dell'integrazione tra istanza del server, pagine esposte e interfaccia di richeista dati.
+`DataFetcher`  | Modulo che si occupa di effettuare le richieste al servizio **API** secondo le definizioni specificate in ingresso.
+`Server`             | Classe responsabile del ciclo di vita del server Node.js. Effettua le richieste definite dalle `UIRoute` per ricevere i dati, utilizzando `DataFetcher`.
+`UIRoute`            | Interfaccia utilizzata per definire le richieste da effettuare per ricevere le informazioni che popolano le pagine della rotta.
+`UserUIRoute`        | Implementazione di `UIRoute` che definisce le richieste per ottenere o modificare le preferenze dell'utente e le pagine di visualizzazione e modifica delle preferenze utente.
+`DevicesUIRoute`     | Implementazione di `UIRoute` che definisce le richieste per ottenere informazioni sui dispositivi collegati e le pagine di visualizzazione di questi.
+`TemperatureUIRoute` | Implementazione di `UIRoute` che definisce le richieste per ottenere dati legati alla temperatura, visualizzare ed eseguire operazioni con dispositivi attivi e ne permette la visualizzazione.
+`LightUIRoute`       | Implementazione di `UIRoute` che definisce le richieste per ottenere dati legati all'illuminazione, visualizzare ed eseguire operazioni con dispositivi attivi e ne permette la visualizzazione.
+`UIPage`             | Implementazione di un componente React (`React.Component`) che rappresenta una pagina. La pagina visualizzata può contenere più figli anch'essi componenti React.
+`React.Component`    | Classe che rappresenta un componente grafico nel framework React.
+
+
 ## Design Pattern
 
 I Design Pattern descrivono la metodologia con cui affrontare problemi ricorrenti, fornendo soluzioni standard condivise.
@@ -314,6 +332,56 @@ I principali Design Pattern vengono suddivisi in quattro categorie:
 -   Creazionali: affrontano il problema di astrarre il sistema rendendolo indipendente dall’implementazione concreta delle sue componenti;
 -   Strutturali: affrontano il problema riguardante la composizione delle classi e degli oggetti, sfruttando l’ereditarietà e l’aggregazione;
 -   Comportamentali: affrontano il problema dell’interazione tra le componenti, definendo la funzione degli oggetti e il modo in cui interagiscono gli uni con gli altri.
+
+### Design Pattern Comportamentali
+
+### Design Pattern Creazionali
+
+#### Abstract Factory
+
+L'**Abstract Factory** fornisce un'interfaccia per creare famiglie di oggetti connessi o dipendenti tra loro, in modo che non ci sia necessità da parte dei client di specificare quale classe istanziare, permettendo che un sistema sia indipendente dall'implementazione degli oggetti concreti e che il client, attraverso l'interfaccia, utilizzi diverse famiglie di prodotti.
+
+##### Utilizzo
+
+Questo pattern è utilizzato nel servizio [Servizio: termometro _virtualizzato_](#user-content-servizio:-termometro-virtualizzato) per permettere la creazione di funzioni di generazione della temperatura.
+
+![Utilizzo del pattern Abstract Factory](./images/abstract_factory.png)
+
+#### Singleton
+
+Il **Singleton** ha lo scopo di garantire che di una determinata classe venga creata una e una sola istanza, fornendo un unico punto di accesso globale a tale istanza.
+
+##### Utilizzo
+
+Questo pattern è utilizzato nel servizio [Servizio: lampada _virtualizzata_](#user-content-servizio:-lampada-virtualizzata) per obbligare il servizio a simulare una singola lampada, favorendo così l'esecuzione di numerosi container del servizio per simulare un intero sistema d'illuminazione.
+
+![Utilizzo del pattern Singleton](./images/singleton.png)
+
+### Design Pattern Strutturali
+
+#### Decorator
+
+Il design pattern **Decorator** consente di aggiungere nuove funzionalità ad oggetti già esistenti, senza utilizzare l'ereditarietà tra classi.
+
+##### Utilizzo
+
+Questo pattern è utilizzato nel servizio [Servizio: illuminazione](#user-content-servizio:-illuminazione) per permettere al servizio di aggiungere dinamicamente le funzionalità di cambiamento colore ad una sorgente luminosa normale.
+
+![Utilizzo del pattern Decorator](./images/decorator.png)
+
+#### Composite
+
+Il design pattern **Composite** organizza gli oggetti in una struttura ad albero, nella quale i nodi sono delle entità composte e le foglie sono oggetti semplici.
+
+##### Utilizzo
+
+Questo pattern è utilizzato nel servizio [Servizio: web app](#user-content-servizio:-web-app) per permettere la composizione di più componenti React per costruire interfacce complesse.
+
+![Utilizzo del pattern Singleton](./images/composite.png)
+
+#### Module
+
+Il pattern **Module** è uno dei pattern specifici del linguaggio JavaScript: il suo scopo è quello di rendere disponibile all’interno degli oggetti l’encapsulation, mantenendo privati e non accessibili dall’esterno campi dati e funzioni utilizzate internamente. 
 
 # Note
 
