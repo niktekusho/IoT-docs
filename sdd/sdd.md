@@ -335,6 +335,14 @@ I principali Design Pattern vengono suddivisi in quattro categorie:
 
 ### Design Pattern Comportamentali
 
+#### Mediator
+
+Il design pattern **Mediator** ha l'intento di disaccoppiare entità del sistema che devono comunicare fra loro. Il pattern infatti fa in modo che queste entità non si referenzino reciprocamente, agendo da "mediatore" fra le parti.
+
+##### Utilizzo
+
+Questo pattern è utilizzato in tutti i servizi sottoforma della classe `ServiceManager` per aumentare il disaccoppiamento tra classi che trattano la persistenza, l'esecuzione dei servizi, la comunicazione, ecc.
+
 ### Design Pattern Creazionali
 
 #### Abstract Factory
@@ -377,7 +385,7 @@ Il design pattern **Composite** organizza gli oggetti in una struttura ad albero
 
 Questo pattern è utilizzato nel servizio [Servizio: web app](#user-content-servizio-web-app) per permettere la composizione di più componenti React per costruire interfacce complesse.
 
-![Utilizzo del pattern Singleton](./images/composite.png)
+![Utilizzo del pattern Composite](./images/composite.png)
 
 #### Module
 
