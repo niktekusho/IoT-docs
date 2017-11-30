@@ -343,7 +343,7 @@ L'**Abstract Factory** fornisce un'interfaccia per creare famiglie di oggetti co
 
 ##### Utilizzo
 
-Questo pattern è utilizzato nel servizio [Servizio: termometro _virtualizzato_](#user-content-servizio:-termometro-virtualizzato) per permettere la creazione di funzioni di generazione della temperatura.
+Questo pattern è utilizzato nel servizio [Servizio: termometro _virtualizzato_](#user-content-servizio-termometro-virtualizzato) per permettere la creazione di funzioni di generazione della temperatura.
 
 ![Utilizzo del pattern Abstract Factory](./images/abstract_factory.png)
 
@@ -353,7 +353,7 @@ Il **Singleton** ha lo scopo di garantire che di una determinata classe venga cr
 
 ##### Utilizzo
 
-Questo pattern è utilizzato nel servizio [Servizio: lampada _virtualizzata_](#user-content-servizio:-lampada-virtualizzata) per obbligare il servizio a simulare una singola lampada, favorendo così l'esecuzione di numerosi container del servizio per simulare un intero sistema d'illuminazione.
+Questo pattern è utilizzato nel servizio [Servizio: lampada _virtualizzata_](#user-content-servizio-lampada-virtualizzata) per obbligare il servizio a simulare una singola lampada, favorendo così l'esecuzione di numerosi container del servizio per simulare un intero sistema d'illuminazione.
 
 ![Utilizzo del pattern Singleton](./images/singleton.png)
 
@@ -365,7 +365,7 @@ Il design pattern **Decorator** consente di aggiungere nuove funzionalità ad og
 
 ##### Utilizzo
 
-Questo pattern è utilizzato nel servizio [Servizio: illuminazione](#user-content-servizio:-illuminazione) per permettere al servizio di aggiungere dinamicamente le funzionalità di cambiamento colore ad una sorgente luminosa normale.
+Questo pattern è utilizzato nel servizio [Servizio: illuminazione](#user-content-servizio-illuminazione) per permettere al servizio di aggiungere dinamicamente le funzionalità di cambiamento colore ad una sorgente luminosa normale.
 
 ![Utilizzo del pattern Decorator](./images/decorator.png)
 
@@ -375,13 +375,13 @@ Il design pattern **Composite** organizza gli oggetti in una struttura ad albero
 
 ##### Utilizzo
 
-Questo pattern è utilizzato nel servizio [Servizio: web app](#user-content-servizio:-web-app) per permettere la composizione di più componenti React per costruire interfacce complesse.
+Questo pattern è utilizzato nel servizio [Servizio: web app](#user-content-servizio-web-app) per permettere la composizione di più componenti React per costruire interfacce complesse.
 
 ![Utilizzo del pattern Singleton](./images/composite.png)
 
 #### Module
 
-Il pattern **Module** è uno dei pattern specifici del linguaggio JavaScript: il suo scopo è quello di rendere disponibile all’interno degli oggetti l’encapsulation, mantenendo privati e non accessibili dall’esterno campi dati e funzioni utilizzate internamente. 
+Il pattern **Module** è uno dei pattern specifici del linguaggio JavaScript: il suo scopo è quello di rendere disponibile all’interno degli oggetti l’encapsulation, mantenendo privati e non accessibili dall’esterno campi dati e funzioni utilizzate internamente.
 
 # Note
 
