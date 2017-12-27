@@ -428,21 +428,21 @@ Dove:
 
 | Identificativo requisito | Categoria    | Implementazione |
 | ------------------------ | ------------ | --------------- |
-| RMF1                     | Obbligatorio |                 |
-| RMF2                     | Obbligatorio |                 |
-| RAF3                     | Desiderabile |                 |
-| RMF4                     | Obbligatorio |                 |
-| RAF5                     | Desiderabile |                 |
-| RAF6                     | Desiderabile |                 |
-| RAF7                     | Desiderabile |                 |
-| RAF8                     | Desiderabile |                 |
-| RAF9                     | Desiderabile |                 |
-| RMF10                    | Obbligatorio |                 |
-| ROQ1                     | Opzionale    |                 |
-| RMO1                     | Obbligatorio |                 |
-| RAO2                     | Desiderabile |                 |
-| RAO3                     | Desiderabile |                 |
-| RMO4                     | Obbligatorio |                 |
+| RMF1                     | Obbligatorio | Fatto           |
+| RMF2                     | Obbligatorio | Fatto           |
+| RAF3                     | Desiderabile | Rigettato       |
+| RMF4                     | Obbligatorio | In corso        |
+| RAF5                     | Desiderabile | Rigettato       |
+| RAF6                     | Desiderabile | Rigettato       |
+| RAF7                     | Desiderabile | Rigettato       |
+| RAF8                     | Desiderabile | In corso        |
+| RAF9                     | Desiderabile | In corso        |
+| RMF10                    | Obbligatorio | Rigettato       |
+| ROQ1                     | Opzionale    | In corso        |
+| RMO1                     | Obbligatorio | Fatto           |
+| RAO2                     | Desiderabile | Fatto           |
+| RAO3                     | Desiderabile | Fatto           |
+| RMO4                     | Obbligatorio | Fatto           |
 
 # Note
 
