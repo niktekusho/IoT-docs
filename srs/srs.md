@@ -431,12 +431,12 @@ Dove:
 | RMF1                     | Obbligatorio | Fatto           |
 | RMF2                     | Obbligatorio | Fatto           |
 | RAF3                     | Desiderabile | Rigettato       |
-| RMF4                     | Obbligatorio | In corso        |
+| RMF4                     | Obbligatorio | Fatto           |
 | RAF5                     | Desiderabile | Rigettato       |
 | RAF6                     | Desiderabile | Rigettato       |
 | RAF7                     | Desiderabile | Rigettato       |
-| RAF8                     | Desiderabile | In corso        |
-| RAF9                     | Desiderabile | In corso        |
+| RAF8                     | Desiderabile | Fatto           |
+| RAF9                     | Desiderabile | Fatto           |
 | RMF10                    | Obbligatorio | Rigettato       |
 | ROQ1                     | Opzionale    | In corso        |
 | RMO1                     | Obbligatorio | Fatto           |
