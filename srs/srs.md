@@ -438,7 +438,7 @@ Dove:
 | RAF8                     | Desiderabile | Fatto           |
 | RAF9                     | Desiderabile | Fatto           |
 | RMF10                    | Obbligatorio | Rigettato       |
-| ROQ1                     | Opzionale    | In corso        |
+| ROQ1                     | Opzionale    | Fatto           |
 | RMO1                     | Obbligatorio | Fatto           |
 | RAO2                     | Desiderabile | Fatto           |
 | RAO3                     | Desiderabile | Fatto           |
