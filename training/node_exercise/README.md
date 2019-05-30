@@ -3,9 +3,13 @@
 # Introduzione/_Intro_
 Questa sezione del repository contiene un esercizio legato alla creazione di un sistema per la gestione di un cinema utilizzando l'architettura a microservizi.
 
+*Aggiornamento 2019*: al fine di archiviare il sorgente degli esercizi, ormai obsoleto, ho compresso i sorgenti in 3 zip separati.
+
 **Credits**: [https://github.com/mjhea0/microservice-movies](https://github.com/mjhea0/microservice-movies)
 
 _This section of the repository contains an exercise mimicking the creation of a cinema management system using microservices architecture._
+
+*Update 2019*: I compressed the source code of the exercises for archiving purposes since their source code is now obsolete.
 
 # Descrizione/_Description_
 L'esercizio si articola nella realizzazione di 3 servizi:
